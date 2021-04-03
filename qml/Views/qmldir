@@ -1,0 +1,3 @@
+module Views
+AirView 1.0 AirView.qml
+LoginView 1.0 LoginView.qml

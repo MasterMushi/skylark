@@ -1,0 +1,5 @@
+module Texts
+CustomButtonText 1.0 CustomButtonText.qml
+CustomH1Text 1.0 CustomH1Text.qml
+CustomCaptionText 1.0 CustomCaptionText.qml
+CustomMenuText 1.0 CustomMenuText.qml

@@ -1,0 +1,9 @@
+module SkyWindowHeader
+
+SkyWindowHeader 1.0 SkyWindowHeader.qml
+
+internal AtisLabel AtisLabel.qml
+internal DateLabel DateLabel.qml
+internal SystemStatusButton SystemStatusButton.qml
+internal TimeLabel TimeLabel.qml
+internal UserLabel UserLabel.qml

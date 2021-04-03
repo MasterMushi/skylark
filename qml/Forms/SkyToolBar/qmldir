@@ -1,0 +1,6 @@
+module SkyToolBar
+
+SkyToolBar 1.0 SkyToolBar.qml
+
+internal SkyToolBarIconButton SkyToolBarIconButton.qml
+internal SkyToolBarComboBox SkyToolBarComboBox.qml

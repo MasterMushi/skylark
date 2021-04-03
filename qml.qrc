@@ -1,0 +1,78 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/StyleConstants/qmldir</file>
+        <file>qml/StyleConstants/StyleConstants.qml</file>
+        <file>qml/Views/LoginView.qml</file>
+        <file>qml/Views/qmldir</file>
+        <file>qml/ResourceProvider/qmldir</file>
+        <file>qml/ResourceProvider/Resources.qml</file>
+        <file>resources/icons/loading_dark.svg</file>
+        <file>resources/icons/loading_light.svg</file>
+        <file>qml/Forms/qmldir</file>
+        <file>qml/Forms/CustomBusyButton.qml</file>
+        <file>qml/Forms/CustomBusyIndicator.qml</file>
+        <file>qml/Texts/CustomButtonText.qml</file>
+        <file>qml/Texts/CustomCaptionText.qml</file>
+        <file>qml/Texts/qmldir</file>
+        <file>qml/Texts/CustomH1Text.qml</file>
+        <file>qml/Forms/CustomTextField.qml</file>
+        <file>resources/fonts/Lato-Bold.ttf</file>
+        <file>resources/fonts/Lato-Regular.ttf</file>
+        <file>qml/Views/AirView.qml</file>
+        <file>resources/icons/common/md/cross.svg</file>
+        <file>resources/icons/common/md/plus.svg</file>
+        <file>resources/icons/md/check.svg</file>
+        <file>resources/icons/md/checkbox check.svg</file>
+        <file>resources/icons/md/checkbox empty.svg</file>
+        <file>resources/icons/md/chevrone down.svg</file>
+        <file>resources/icons/md/circle filled.svg</file>
+        <file>resources/icons/md/circle.svg</file>
+        <file>resources/icons/md/flightdata.svg</file>
+        <file>resources/icons/md/fpl.svg</file>
+        <file>resources/icons/md/grid.svg</file>
+        <file>resources/icons/md/help.svg</file>
+        <file>resources/icons/md/layers.svg</file>
+        <file>resources/icons/md/line.svg</file>
+        <file>resources/icons/md/pointer.svg</file>
+        <file>resources/icons/md/polygon.svg</file>
+        <file>resources/icons/md/rbl.svg</file>
+        <file>resources/icons/md/runway.svg</file>
+        <file>resources/icons/md/search.svg</file>
+        <file>resources/icons/md/settings.svg</file>
+        <file>resources/icons/md/text.svg</file>
+        <file>resources/icons/md/weather.svg</file>
+        <file>resources/icons/sm/arrow down.svg</file>
+        <file>resources/icons/sm/arrow left.svg</file>
+        <file>resources/icons/sm/arrow right.svg</file>
+        <file>resources/icons/sm/arrow up.svg</file>
+        <file>resources/icons/sm/cross.svg</file>
+        <file>resources/icons/sm/plus.svg</file>
+        <file>qml/Texts/CustomMenuText.qml</file>
+        <file>resources/content/screenshot.png</file>
+        <file>resources/icons/streetlights/green.svg</file>
+        <file>resources/icons/streetlights/red.svg</file>
+        <file>resources/icons/streetlights/yellow.svg</file>
+        <file>qml/Tools/GeneralTime.qml</file>
+        <file>qml/Tools/qmldir</file>
+        <file>resources/icons/system_green.svg</file>
+        <file>qml/Forms/AbstractForms/qmldir</file>
+        <file>qml/Forms/SkyToolBar/qmldir</file>
+        <file>qml/Forms/SkyToolBar/SkyToolBar.qml</file>
+        <file>qml/Forms/SkyToolBar/SkyToolBarIconButton.qml</file>
+        <file>qml/Forms/SkyToolBar/ToolBarCheckBox.qml</file>
+        <file>qml/Forms/SkyToolBar/SkyToolBarComboBox.qml</file>
+        <file>qml/Forms/SkyWindowHeader/AtisLabel.qml</file>
+        <file>qml/Forms/SkyWindowHeader/qmldir</file>
+        <file>qml/Forms/SkyWindowHeader/SystemStatusButton.qml</file>
+        <file>qml/Forms/SkyWindowHeader/UserLabel.qml</file>
+        <file>qml/Forms/SkyWindowHeader/DateLabel.qml</file>
+        <file>qml/Forms/SkyWindowHeader/TimeLabel.qml</file>
+        <file>qml/Forms/AbstractForms/AbstractToolBarButton.qml</file>
+        <file>qml/Forms/SkyWindowHeader/SkyWindowHeader.qml</file>
+        <file>qml/Forms/AbstractForms/AbstractLabel.qml</file>
+        <file>qml/Forms/AbstractForms/AbstractToolBarPopup.qml</file>
+        <file>qml/Shapes/PopupTriangle.qml</file>
+        <file>qml/Shapes/qmldir</file>
+    </qresource>
+</RCC>

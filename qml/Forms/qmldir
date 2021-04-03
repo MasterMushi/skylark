@@ -1,0 +1,15 @@
+module Forms
+CustomBusyButton 1.0 CustomBusyButton.qml
+CustomBusyIndicator 1.0 CustomBusyIndicator.qml
+CustomTextField 1.0 CustomTextField.qml
+
+ToolBarComboBox 1.0 ToolBarComboBox.qml
+ToolBarCheckBox 1.0 ToolBarCheckBox.qml
+ToolBarButton 1.0 ToolBarButton.qml
+
+UTCDateString 1.0 UTCDateString.qml
+UTCTimeString 1.0 UTCTimeString.qml
+
+AtisLabel 1.0 AtisLabel.qml
+SystemStatusButton 1.0 SystemStatusButton.qml
+UserLabel 1.0 UserLabel.qml

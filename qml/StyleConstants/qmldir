@@ -1,0 +1,2 @@
+module StyleConstants
+singleton StyleConstants 1.0 StyleConstants.qml
