@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
-import QtQuick.Shapes 1.12
 import QtQuick.Layouts 1.12
 import Forms.AbstractForms 1.0
 import ResourceProvider 1.0
@@ -10,24 +9,18 @@ import Texts 1.0
 ComboBox {
     id: root
 
-//    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-//                            implicitContentWidth + leftPadding + rightPadding)
-//    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-//                             implicitContentHeight + topPadding + bottomPadding,
-//                             implicitIndicatorHeight + topPadding + bottomPadding)
-
-//    leftPadding: padding + (!root.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
-//    rightPadding: padding + (root.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
+    width: 72
+    height: 40
 
     Component.onCompleted: { currentIndex = 0 }
-
     textRole: "text"
+    down: _popup.opened
 
     contentItem: Image {
         id: _currentImage
         fillMode: Image.Pad
         source: root.model.get(currentIndex)["img"]
-        opacity: _delegate.down ? 1 : 0.7
+        opacity: (root.hovered || root.down) ? 1 : 0.7
     }
 
     indicator: Image {
@@ -36,15 +29,14 @@ ComboBox {
         anchors.right: parent.right
         anchors.rightMargin: 12
         source: Resources.icons.chevroneDown
-        opacity: _delegate.down ? 1 : 0.7
+        opacity: (root.hovered || root.down) ? 1 : 0.7
     }
 
     background: Rectangle {
         implicitWidth: 72
         implicitHeight: 40
         radius: StyleConstants.toolBarFormsRadius
-
-        color: (root.hovered || root.down) ? StyleConstants.highlightColor : StyleConstants.buttonBaseColor
+        color: (root.hovered & root.enabled) ? StyleConstants.highlightColor : (root.down ? StyleConstants.darkBaseColor : StyleConstants.buttonBaseColor)
     }
 
     delegate: ItemDelegate {
@@ -72,21 +64,49 @@ ComboBox {
         highlighted: highlightedIndex === index
 
         background: Rectangle {
-            implicitWidth: 160
+            implicitWidth: popup.width
             implicitHeight: 48
+            radius: (index === 0 || index === root.model.count - 1) ? StyleConstants.toolBarPopupRadius : 0
             color: _delegate.highlighted ? StyleConstants.highlightColor : StyleConstants.darkBaseColor
+
+            Rectangle {
+                visible: index === 0
+                height: parent.radius
+                anchors {
+                    bottom: parent.bottom
+                    left: parent.left
+                    right: parent.right
+                }
+                color: parent.color
+            }
+
+            Rectangle {
+                visible: index === root.model.count - 1
+                height: parent.radius
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    right: parent.right
+                }
+                color: parent.color
+            }
         }
+    }
+
+    MouseArea {
+        id: _mouseArea
+        anchors.fill: parent
+        onPressed:  mouse.accepted = false
+        cursorShape: Qt.PointingHandCursor
     }
 
     popup: AbstractToolBarPopup {
         id: _popup
-        x: root.x
         y: root.y + root.height
-
+        clip: true
         palette.base: StyleConstants.darkBaseColor
 
         width: 160
-        //height: contentItem.implicitHeight + topPadding
 
         contentItem: ListView {
             clip: true
@@ -95,14 +115,11 @@ ComboBox {
             currentIndex: root.highlightedIndex
             highlightMoveDuration: 0
 
-            Rectangle {
-                id: _rectangle
-                z: 10
-                radius: StyleConstants.toolBarPopupRadius
-                width: parent.width
-                height: parent.height
-                color: "transparent"
-                border.color: "transparent"
+            MouseArea {
+                id: _popupMouseArea
+                anchors.fill: parent
+                onPressed:  mouse.accepted = false
+                cursorShape: Qt.PointingHandCursor
             }
         }
     }

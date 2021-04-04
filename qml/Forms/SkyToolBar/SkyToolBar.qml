@@ -21,15 +21,12 @@ ToolBar {
         anchors.leftMargin: 12
 
         Layout.alignment: Qt.AlignLeft
-        spacing: 24
+        spacing: StyleConstants.skyToolBarSpacing
 
-        SkyToolBarComboBox {
-            id: _inspectorComboBox
-            width: 72
-            height: 40
-
+        SkyPointerComboBox {
+            id: _pointerComboBox
             model: ListModel {
-                id: _inspectorComboBoxModel
+                id: _pointerComboBoxModel
                 Component.onCompleted: {
                             append({ "text": "Cursor", "img": Resources.icons.pointer });
                             append({ "text": "Text", "img": Resources.icons.text });
@@ -38,6 +35,14 @@ ToolBar {
                             append({ "text": "Polygon", "img": Resources.icons.polygon });
                 }
             }
+        }
+
+        SkyLayersCheckBox {
+            id: _layersCheckBox
+        }
+
+        SkyRulerDialogButton {
+            id: _rulerDialogButton
         }
     }
 
@@ -48,7 +53,7 @@ ToolBar {
         anchors.rightMargin: 12
 
         Layout.alignment: Qt.AlignRight
-        spacing: 24
+        spacing: StyleConstants.skyToolBarSpacing
 
         SkyToolBarIconButton {
             id: _flightdataToolBarButton

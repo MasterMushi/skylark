@@ -9,6 +9,7 @@ AbstractToolBarButton {
 
     palette {
         base: StyleConstants.lightBaseColor
+        dark: StyleConstants.darkBaseColor
         highlight: StyleConstants.highlightColor
     }
 }

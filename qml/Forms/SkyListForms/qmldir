@@ -1,0 +1,6 @@
+module SkyListForms
+
+SkyList 1.0 SkyList.qml
+
+internal SkyListItemDelegate SkyListItemDelegate.qml
+internal SkyListText SkyListText.qml

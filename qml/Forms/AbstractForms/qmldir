@@ -1,5 +1,6 @@
 module AbstractForms
 
+AbstractImageControl 1.0 AbstractImageControl.qml
 AbstractLabel 1.0 AbstractLabel.qml
 AbstractToolBarButton 1.0 AbstractToolBarButton.qml
 AbstractToolBarPopup 1.0 AbstractToolBarPopup.qml

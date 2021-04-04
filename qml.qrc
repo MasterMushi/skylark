@@ -46,7 +46,6 @@
         <file>resources/icons/sm/arrow left.svg</file>
         <file>resources/icons/sm/arrow right.svg</file>
         <file>resources/icons/sm/arrow up.svg</file>
-        <file>resources/icons/sm/cross.svg</file>
         <file>resources/icons/sm/plus.svg</file>
         <file>qml/Texts/CustomMenuText.qml</file>
         <file>resources/content/screenshot.png</file>
@@ -60,12 +59,12 @@
         <file>qml/Forms/SkyToolBar/qmldir</file>
         <file>qml/Forms/SkyToolBar/SkyToolBar.qml</file>
         <file>qml/Forms/SkyToolBar/SkyToolBarIconButton.qml</file>
-        <file>qml/Forms/SkyToolBar/ToolBarCheckBox.qml</file>
-        <file>qml/Forms/SkyToolBar/SkyToolBarComboBox.qml</file>
-        <file>qml/Forms/SkyWindowHeader/AtisLabel.qml</file>
+        <file>qml/Forms/SkyToolBar/SkyLayersCheckBox.qml</file>
+        <file>qml/Forms/SkyToolBar/SkyPointerComboBox.qml</file>
+        <file>qml/Forms/SkyWindowHeader/AtisButton.qml</file>
         <file>qml/Forms/SkyWindowHeader/qmldir</file>
         <file>qml/Forms/SkyWindowHeader/SystemStatusButton.qml</file>
-        <file>qml/Forms/SkyWindowHeader/UserLabel.qml</file>
+        <file>qml/Forms/SkyWindowHeader/UserButton.qml</file>
         <file>qml/Forms/SkyWindowHeader/DateLabel.qml</file>
         <file>qml/Forms/SkyWindowHeader/TimeLabel.qml</file>
         <file>qml/Forms/AbstractForms/AbstractToolBarButton.qml</file>
@@ -74,5 +73,23 @@
         <file>qml/Forms/AbstractForms/AbstractToolBarPopup.qml</file>
         <file>qml/Shapes/PopupTriangle.qml</file>
         <file>qml/Shapes/qmldir</file>
+        <file>qml/Forms/SkyWindowHeader/StreetLight.qml</file>
+        <file>qml/Forms/AbstractForms/AbstractImageControl.qml</file>
+        <file>qml/Forms/SkyToolBar/SkyRulerDialogButton.qml</file>
+        <file>resources/icons/md/cross.svg</file>
+        <file>resources/icons/md/atis letter.svg</file>
+        <file>resources/icons/md/atis circle.svg</file>
+        <file>resources/icons/md/user.svg</file>
+        <file>resources/icons/md/dots vertical.svg</file>
+        <file>qml/Forms/CommonForms/DragIndicator.qml</file>
+        <file>qml/Forms/CommonForms/qmldir</file>
+        <file>qml/Forms/CommonForms/CrossIndicator.qml</file>
+        <file>qml/Forms/CommonForms/DownArrowIndicator.qml</file>
+        <file>resources/icons/md/down arrow indicator.svg</file>
+        <file>resources/icons/md/cross mini.svg</file>
+        <file>qml/Forms/SkyListForms/qmldir</file>
+        <file>qml/Forms/SkyListForms/SkyList.qml</file>
+        <file>qml/Forms/SkyListForms/SkyListItemDelegate.qml</file>
+        <file>qml/Forms/SkyListForms/SkyListText.qml</file>
     </qresource>
 </RCC>

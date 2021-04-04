@@ -5,9 +5,12 @@ import StyleConstants 1.0
 AbstractButton {
     id: root
 
+    property alias backgroundColor: _background.color
+
     palette {
         highlightedText: StyleConstants.whiteTextColor
         text: StyleConstants.greyTextColor
+        highlight: StyleConstants.highlightColor
     }
 
     background: Rectangle {
@@ -15,7 +18,7 @@ AbstractButton {
         implicitWidth: root.width
         implicitHeight: root.height
         radius: StyleConstants.toolBarFormsRadius
-        color: (root.hovered & root.enabled) ? palette.highlight : palette.base
+        color: (root.hovered & root.enabled) ? palette.highlight : (root.down ? palette.dark : palette.base)
     }
 
     contentItem: Image {
@@ -23,5 +26,12 @@ AbstractButton {
         fillMode: Image.Pad
         source: root.icon.source
         opacity: (root.hovered & root.enabled) ? 1 : 0.7
+    }
+
+    MouseArea {
+        id: _mouseArea
+        anchors.fill: parent
+        onPressed:  mouse.accepted = false
+        cursorShape: Qt.PointingHandCursor
     }
 }

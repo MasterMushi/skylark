@@ -4,36 +4,36 @@ import QtQuick.Layouts 1.12
 import Forms.AbstractForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
-import Texts 1.0
 
 AbstractToolBarButton {
     id: root
     height: 24
-    width: 138
-    horizontalPadding: 12
+    width: 35
+    horizontalPadding: 8
 
-    property bool statusIsOk: true
-    text: "System Status"
+    property bool activated: true
 
     palette {
         base: StyleConstants.darkBaseColor
         highlight: StyleConstants.highlightColor
+        midlight: StyleConstants.accentColor
     }
 
     contentItem: RowLayout {
 
         Image {
-            id: _image
+            id: _letter
             Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-            source: root.statusIsOk ? Resources.icons.sysGreen : Resources.icons.sysRed
+            source: Resources.icons.atisLetter
         }
 
-        CustomMenuText {
-            id: _text
+        Image {
+            id: _circle
+            visible: root.activated
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-            horizontalAlignment: Text.AlignRight
-            text: root.text
-            color: (root.hovered & root.enabled) ? palette.highlightedText : palette.text
+            source: Resources.icons.aticeCircle
         }
     }
+
+    backgroundColor: (root.hovered & root.enabled) ? palette.highlight : (root.activated ? palette.midlight : (root.down ? palette.dark : palette.base))
 }

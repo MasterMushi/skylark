@@ -16,36 +16,22 @@ ApplicationWindow {
     property int previousX
     property int previousY
 
-    property int xUntilDoubleClicked
-    property int yUntilDoubleClicked
-    property int widthUntilDoubleClicked
-    property int heightUntilDoubleClicked
-
     SkyWindowHeader {
         id: _menuBar
         width: parent.width
         height: 38
         anchors.top: parent.top
 
+        onAppCloseClicked: {
+
+        }
+
 
         MouseArea {
             anchors.fill: parent
 
             onDoubleClicked: {
-                if (root.width < Screen.width || root.height < Screen.height)
-                {
-                    root.xUntilDoubleClicked = root.x; root.setX(0)
-                    root.yUntilDoubleClicked = root.y; root.setY(0)
-                    root.widthUntilDoubleClicked = root.width; root.width = Screen.width
-                    root.heightUntilDoubleClicked = root.height; root.height = Screen.height
-                }
-                else
-                {
-                    root.setX(root.xUntilDoubleClicked)
-                    root.setY(root.yUntilDoubleClicked)
-                    root.width = root.widthUntilDoubleClicked
-                    root.height = root.heightUntilDoubleClicked
-                }
+                root.visibility === Window.Maximized ? root.showNormal() : root.showMaximized()
             }
 
             onPressed: {
