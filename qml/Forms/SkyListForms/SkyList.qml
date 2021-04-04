@@ -12,6 +12,9 @@ Control {
     property string name: "List Title"
     property bool pinned: false
 
+    property real previousX
+    property real previousY
+
     property alias backgroundColor: _background.color
 
     horizontalPadding: 4
@@ -29,7 +32,15 @@ Control {
             width: parent.width
             height: root.topPadding
             color: "transparent"
-            layer.enabled: true
+
+            MouseArea {
+                anchors.fill: parent
+                drag.target: root
+                drag.minimumX: root.parent.x
+                drag.maximumX: root.parent.width - root.width
+                drag.minimumY: root.parent.y
+                drag.maximumY: root.parent.height - root.height
+            }
 
             CustomMenuText {
                 id: _title
@@ -44,7 +55,7 @@ Control {
                 anchors.right: parent.right
                 anchors.topMargin: parent.height / 2 - height / 2
                 anchors.rightMargin: anchors.topMargin
-                Component.onCompleted: console.log(parent.height, height, anchors.topMargin)
+
             }
         }
     }
@@ -54,6 +65,7 @@ Control {
         implicitHeight: contentHeight
         delegate: SkyListItemDelegate { }
         spacing: 1
+        interactive: false
         model: ListModel {
 
             ListElement {

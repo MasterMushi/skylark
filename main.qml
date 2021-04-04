@@ -13,8 +13,8 @@ ApplicationWindow {
     title: qsTr("SkyLark")
     flags: Qt.Window | Qt.FramelessWindowHint
 
-    property int previousX
-    property int previousY
+    property real previousX
+    property real previousY
 
     SkyWindowHeader {
         id: _menuBar

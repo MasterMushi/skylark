@@ -43,5 +43,6 @@ ItemDelegate {
 
     background: Rectangle {
         color: "black"
+        opacity: 0.75
     }
 }

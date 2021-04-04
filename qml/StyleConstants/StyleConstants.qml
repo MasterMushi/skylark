@@ -20,7 +20,7 @@ QtObject {
     readonly property color buttonActiveColor: "#0f0f1a"
 
     //lists colors
-    readonly property color arrivalListColor: "#80f2767b"
+    readonly property color arrivalListColor: "#24c60008"
     readonly property color flightPlansListColor: "#9ec600"
     readonly property color runwaysListColor: "#00c65b"
     readonly property color weatherListColor: "#00bac6"

@@ -114,6 +114,7 @@ ComboBox {
             model: root.delegateModel
             currentIndex: root.highlightedIndex
             highlightMoveDuration: 0
+            interactive: false
 
             MouseArea {
                 id: _popupMouseArea
