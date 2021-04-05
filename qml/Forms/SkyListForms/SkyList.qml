@@ -61,7 +61,6 @@ Control {
         }
     }
 
-
     contentItem: ListView {
         implicitHeight: contentHeight
         implicitWidth: contentWidth
