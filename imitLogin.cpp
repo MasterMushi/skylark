@@ -1,14 +1,14 @@
-#include "imit.h"
+#include "imitLogin.h"
 #include "QDebug"
 
-Imit::Imit(QObject *parent) : QObject(parent)
+ImitLogin::ImitLogin(QObject *parent) : QObject(parent)
 {
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),
           this, SLOT(timerSlot()));
 }
 
-void Imit::checkLogin(const QString &user, const QString &pass)
+void ImitLogin::checkLogin(const QString &user, const QString &pass)
 {
     if (user == "JTK" && pass == "11111")
     {
@@ -23,12 +23,12 @@ void Imit::checkLogin(const QString &user, const QString &pass)
     setLoginError(true);
 }
 
-bool Imit::isBusy() const
+bool ImitLogin::isBusy() const
 {
     return m_isBusy;
 }
 
-void Imit::setIsBusy(bool isBusy)
+void ImitLogin::setIsBusy(bool isBusy)
 {
     if (m_isBusy != isBusy)
     {
@@ -37,12 +37,12 @@ void Imit::setIsBusy(bool isBusy)
     }
 }
 
-bool Imit::loginError() const
+bool ImitLogin::loginError() const
 {
     return m_loginError;
 }
 
-void Imit::setLoginError(bool loginError)
+void ImitLogin::setLoginError(bool loginError)
 {
     if (m_loginError != loginError)
     {
@@ -51,12 +51,12 @@ void Imit::setLoginError(bool loginError)
     }
 }
 
-bool Imit::loginOk() const
+bool ImitLogin::loginOk() const
 {
     return m_loginOk;
 }
 
-void Imit::setLoginOk(bool loginOk)
+void ImitLogin::setLoginOk(bool loginOk)
 {
     if (m_loginOk != loginOk)
     {
@@ -66,12 +66,12 @@ void Imit::setLoginOk(bool loginOk)
     }
 }
 
-QString Imit::user() const
+QString ImitLogin::user() const
 {
     return m_user;
 }
 
-void Imit::setUser(const QString &user)
+void ImitLogin::setUser(const QString &user)
 {
     if (m_user != user)
     {
@@ -80,7 +80,7 @@ void Imit::setUser(const QString &user)
     }
 }
 
-void Imit::timerSlot()
+void ImitLogin::timerSlot()
 {
     setIsBusy(false);
 }

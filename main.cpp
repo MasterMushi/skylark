@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "imit.h"
+#include "imitLogin.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    Imit *imit = new Imit();
-    engine.rootContext()->setContextProperty("imit", imit);
+    ImitLogin *imitLogin = new ImitLogin();
+    engine.rootContext()->setContextProperty("imitLogin", imitLogin);
 
     engine.load(url);
 

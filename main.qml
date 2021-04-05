@@ -105,12 +105,12 @@ ApplicationWindow {
 
         LoginView {
             id: _loginView
-            onLogin: imit.checkLogin(user, pass)
+            onLogin: imitLogin.checkLogin(user, pass)
             onLoginSuccess: _stack.push(_airViewComponent);
 
-            loginError: imit.loginError
-            loginOk: imit.loginOk
-            loginInProgress: imit.isBusy
+            loginError: imitLogin.loginError
+            loginOk: imitLogin.loginOk
+            loginInProgress: imitLogin.isBusy
 
         }
     }

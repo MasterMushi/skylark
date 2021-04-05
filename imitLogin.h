@@ -4,11 +4,11 @@
 #include <QTimer>
 #include <QString>
 
-class Imit : public QObject
+class ImitLogin : public QObject
 {
     Q_OBJECT
 public:
-    explicit Imit(QObject *parent = nullptr);
+    explicit ImitLogin(QObject *parent = nullptr);
 
     Q_INVOKABLE void checkLogin(const QString& user, const QString& pass);
     Q_PROPERTY(bool isBusy READ isBusy NOTIFY busyChanged)
