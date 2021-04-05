@@ -12,14 +12,13 @@ void Imit::checkLogin(const QString &user, const QString &pass)
 {
     if (user == "JTK" && pass == "11111")
     {
-        qDebug() << "Login is OK";
         setIsBusy(true);
         setLoginError(false);
         timer->start(3000);
         setLoginOk(true);
+        setUser(user);
         return;
     }
-    qDebug() << "Login isn't OK";
     setIsBusy(false);
     setLoginError(true);
 }
@@ -35,7 +34,6 @@ void Imit::setIsBusy(bool isBusy)
     {
         m_isBusy = isBusy;
         emit busyChanged();
-        qDebug() << "setIsBusy <<" << isBusy;
     }
 }
 
@@ -50,7 +48,6 @@ void Imit::setLoginError(bool loginError)
     {
         m_loginError = loginError;
         emit loginErrorChanged();
-        qDebug() << "setLoginError <<" << loginError;
     }
 }
 
@@ -64,8 +61,22 @@ void Imit::setLoginOk(bool loginOk)
     if (m_loginOk != loginOk)
     {
         m_loginOk = loginOk;
+
         emit loginOkChanged();
-        qDebug() << "setLoginOk <<" << loginOk;
+    }
+}
+
+QString Imit::user() const
+{
+    return m_user;
+}
+
+void Imit::setUser(const QString &user)
+{
+    if (m_user != user)
+    {
+        m_user = user;
+        emit userChanged();
     }
 }
 

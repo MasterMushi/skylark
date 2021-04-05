@@ -7,7 +7,8 @@ import Forms.CommonForms 1.0
 ItemDelegate {
     id: root
 
-    width: 403
+    implicitWidth: 403
+    implicitHeight: 38
 
     contentItem: RowLayout {
         id: content

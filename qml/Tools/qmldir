@@ -1,3 +1,0 @@
-module Tools
-
-singleton GeneralTime 1.0 GeneralTime.qml

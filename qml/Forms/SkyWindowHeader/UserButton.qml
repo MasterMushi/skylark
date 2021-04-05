@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import Managers 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
 import Texts 1.0
@@ -13,7 +14,7 @@ AbstractToolBarButton {
     horizontalPadding: 8
     icon.source: Resources.icons.user
 
-    text: "USR"
+    text: UserManager.currentUser
 
     contentItem: RowLayout {
 

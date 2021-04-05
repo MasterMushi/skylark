@@ -1,0 +1,5 @@
+module Manager
+
+singleton AppManager 1.0 AppManager.qml
+singleton GeneralTimeManager 1.0 GeneralTimeManager.qml
+singleton UserManager 1.0 UserManager.qml

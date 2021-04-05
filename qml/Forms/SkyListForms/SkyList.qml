@@ -20,6 +20,7 @@ Control {
     horizontalPadding: 4
     bottomPadding: 4
     topPadding: 38
+    clip: true
 
 
     background: Rectangle {
@@ -63,7 +64,8 @@ Control {
 
     contentItem: ListView {
         implicitHeight: contentHeight
-        delegate: SkyListItemDelegate { }
+        implicitWidth: contentWidth
+        delegate: SkyListItemDelegate { width: parent.width}
         spacing: 1
         interactive: false
         model: ListModel {
@@ -79,6 +81,37 @@ Control {
                 text2: "A832 - M"
                 text3: "0000"
             }
+        }
+    }
+
+    MouseArea {
+        z: 100
+        width: horizontalPadding
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        cursorShape: Qt.SizeHorCursor
+
+        onPressed: previousX = mouseX
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            root.width = root.width + dx
+        }
+    }
+
+    MouseArea {
+        z: 100
+        height: 4
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        cursorShape: Qt.SizeVerCursor
+
+        onPressed: previousY = mouseY
+        onMouseXChanged: {
+            var dy = mouseY - previousY
+            root.y = root.y + dy
+            root.height = parent.height - dy
         }
     }
 }

@@ -14,7 +14,6 @@ Popup {
 
         height: topPadding + contentItem.implicitHeight
 
-
         background: ColumnLayout {
             anchors.fill: parent
 

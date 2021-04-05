@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.12
 import StyleConstants 1.0
 import Texts 1.0
-import Tools 1.0
+import Managers 1.0
 
 AbstractButton {
     id: root
@@ -13,7 +13,7 @@ AbstractButton {
 
             property var locale: Qt.locale()
 
-            text: GeneralTime.currentDate.toLocaleString(locale, "yyyy  /  MM  /  dd")
+            text: GeneralTimeManager.currentDate.toLocaleString(locale, "yyyy  /  MM  /  dd")
             color: StyleConstants.greyTextColor
         }
 
@@ -21,7 +21,7 @@ AbstractButton {
         id: _tooltip
         parent: root
         visible: root.hovered
-        text: "slider.value.toFixed(1)"
+        text: "tool tip"
 
         background: Item {
 

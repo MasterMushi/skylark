@@ -52,8 +52,6 @@
         <file>resources/icons/streetlights/green.svg</file>
         <file>resources/icons/streetlights/red.svg</file>
         <file>resources/icons/streetlights/yellow.svg</file>
-        <file>qml/Tools/GeneralTime.qml</file>
-        <file>qml/Tools/qmldir</file>
         <file>resources/icons/system_green.svg</file>
         <file>qml/Forms/AbstractForms/qmldir</file>
         <file>qml/Forms/SkyToolBar/qmldir</file>
@@ -91,5 +89,9 @@
         <file>qml/Forms/SkyListForms/SkyList.qml</file>
         <file>qml/Forms/SkyListForms/SkyListItemDelegate.qml</file>
         <file>qml/Forms/SkyListForms/SkyListText.qml</file>
+        <file>qml/Managers/GeneralTimeManager.qml</file>
+        <file>qml/Managers/qmldir</file>
+        <file>qml/Managers/UserManager.qml</file>
+        <file>qml/Managers/AppManager.qml</file>
     </qresource>
 </RCC>

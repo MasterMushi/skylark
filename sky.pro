@@ -33,3 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     imit.h
+
+DISTFILES += \
+    qml/Managers/qmldir

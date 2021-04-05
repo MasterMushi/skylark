@@ -21,11 +21,7 @@ ToolBar {
             anchors.left: parent.left
             anchors.leftMargin: 11
             Layout.alignment: Qt.AlignCenter
-
-            onCloseClicked: root.appCloseClicked
-            onMinimizeClicked: root.appMinimizeClicked
-            onMaximizeClicked: root.appMaximizeClicked
-        }
+    }
 
     RowLayout {
         z: 100

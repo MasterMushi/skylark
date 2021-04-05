@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.15
+import Managers 1.0
 import Forms.SkyWindowHeader 1.0
 import StyleConstants 1.0
 import Views 1.0
@@ -15,6 +16,12 @@ ApplicationWindow {
 
     property real previousX
     property real previousY
+    property bool maximize: AppManager.maximizeAppWindow
+    property bool minimize: AppManager.minimizeAppWindow
+
+    onVisibilityChanged: AppManager.appWindowVisibility = visibility
+    onMaximizeChanged: root.showMaximized()
+    onMinimizeChanged: root.showMinimized()
 
     SkyWindowHeader {
         id: _menuBar
@@ -22,16 +29,11 @@ ApplicationWindow {
         height: 38
         anchors.top: parent.top
 
-        onAppCloseClicked: {
-
-        }
-
-
         MouseArea {
             anchors.fill: parent
 
             onDoubleClicked: {
-                root.visibility === Window.Maximized ? root.showNormal() : root.showMaximized()
+                root.visibility === Window.FullScreen ? root.showNormal() : root.showFullScreen()
             }
 
             onPressed: {
@@ -40,13 +42,19 @@ ApplicationWindow {
             }
 
             onMouseXChanged: {
-                var dx = mouseX - previousX
-                root.setX(root.x + dx)
+                if (root.visibility !== Window.FullScreen)
+                {
+                    var dx = mouseX - previousX
+                    root.setX(root.x + dx)
+                }
             }
 
             onMouseYChanged: {
-                var dy = mouseY - previousY
-                root.setY(root.y + dy)
+                if (root.visibility !== Window.FullScreen)
+                {
+                    var dy = mouseY - previousY
+                    root.setY(root.y + dy)
+                }
             }
         }
     }
@@ -68,7 +76,7 @@ ApplicationWindow {
 
     MouseArea {
         z: 100
-        width: 5
+        height: 5
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
