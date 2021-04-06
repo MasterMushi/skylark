@@ -14,6 +14,12 @@ Page {
     Item {
         anchors.fill: parent
 
+        SkyListPinArea {
+            anchors.left: parent.left
+            anchors.top: parent.top
+            height: parent.height
+        }
+
         SkyList {
             x: 100
             y: 300

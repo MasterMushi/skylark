@@ -23,6 +23,6 @@ Control {
         id: _mouseArea
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
-        onPressed: root.clicked()
+        onClicked: root.clicked()
     }
 }

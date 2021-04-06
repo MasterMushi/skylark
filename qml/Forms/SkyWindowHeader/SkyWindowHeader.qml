@@ -2,51 +2,65 @@ import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import StyleConstants 1.0
+import Managers 1.0
 
 ToolBar {
     id: root
     palette.base: StyleConstants.darkBaseColor
 
-    signal appCloseClicked()
-    signal appMinimizeClicked()
-    signal appMaximizeClicked()
+    signal slCloseClicked()
+    signal slMinimizeClicked()
+    signal slMaximizeClicked()
 
     background: Rectangle {
         color: root.palette.base
     }
 
     StreetLight {
+        id: _sl
             z: 100
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 11
             Layout.alignment: Qt.AlignCenter
+
+            onCloseClicked: root.slCloseClicked()
+            onMinimizeClicked: root.slMinimizeClicked()
+            onMaximizeClicked: root.slMaximizeClicked()
     }
 
     RowLayout {
-        z: 100
         id: _pages
+
+        z: 100
     }
 
-    RowLayout {
-        z: 100
+    RowLayout { 
         id: _statusBar
 
+        z: 100
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 11
         Layout.alignment: Qt.AlignRight
         spacing: StyleConstants.skyWindowHeaderSpacing
 
-        AtisButton {  }
+        enabled: UserManager.userLogined
 
-        DateLabel {  }
+        AtisButton {
+        }
 
-        TimeLabel {  }
+        DateLabel {
+        }
 
-        SystemStatusButton { }
+        TimeLabel {
+        }
 
-        UserButton{  }
+        SystemStatusButton {
+        }
+
+        UserButton {
+        }
     }
 
 

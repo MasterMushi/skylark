@@ -19,7 +19,7 @@
         <file>qml/Forms/CustomTextField.qml</file>
         <file>resources/fonts/Lato-Bold.ttf</file>
         <file>resources/fonts/Lato-Regular.ttf</file>
-        <file>qml/Views/AirView.qml</file>
+        <file>qml/Views/AirSituationView.qml</file>
         <file>resources/icons/common/md/cross.svg</file>
         <file>resources/icons/common/md/plus.svg</file>
         <file>resources/icons/md/check.svg</file>
@@ -90,8 +90,8 @@
         <file>qml/Forms/SkyListForms/SkyListItemDelegate.qml</file>
         <file>qml/Forms/SkyListForms/SkyListText.qml</file>
         <file>qml/Managers/GeneralTimeManager.qml</file>
-        <file>qml/Managers/qmldir</file>
         <file>qml/Managers/UserManager.qml</file>
-        <file>qml/Managers/AppManager.qml</file>
+        <file>qml/Forms/SkyListForms/SkyListPinArea.qml</file>
+        <file>qml/Managers/qmldir</file>
     </qresource>
 </RCC>

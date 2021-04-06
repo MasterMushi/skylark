@@ -3,6 +3,7 @@
 #include <QQmlContext>
 
 #include "imitLogin.h"
+#include "airSituationListModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,8 +13,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-
     engine.addImportPath(":/qml");
+    AirSituationListModel::registerMe("AirSituationListModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
@@ -23,8 +24,8 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
 
     ImitLogin *imitLogin = new ImitLogin();
-    engine.rootContext()->setContextProperty("imitLogin", imitLogin);
 
+    engine.rootContext()->setContextProperty("imitLogin", imitLogin);
     engine.load(url);
 
     return app.exec();

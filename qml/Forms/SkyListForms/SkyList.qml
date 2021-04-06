@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.12
 import Forms.CommonForms 1.0
 import StyleConstants 1.0
 import Texts 1.0
+import AirSituationListModel 1.0
 
 Control {
     id: root
@@ -11,6 +12,7 @@ Control {
 
     property string name: "List Title"
     property bool pinned: false
+    property bool enteredPinArea: false
 
     property real previousX
     property real previousY
@@ -22,11 +24,14 @@ Control {
     topPadding: 38
     clip: true
 
+    palette.highlight: StyleConstants.highlightColor
 
     background: Rectangle {
         id: _background
         radius: StyleConstants.toolBarPopupRadius
         color: StyleConstants.arrivalListColor
+        border.width: 4
+        border.color: root.enteredPinArea ? palette.highlight : "transparent"
 
         Rectangle {
             id: _header
@@ -35,6 +40,7 @@ Control {
             color: "transparent"
 
             MouseArea {
+                id: _dragArea
                 anchors.fill: parent
                 drag.target: root
                 drag.minimumX: root.parent.x
@@ -56,7 +62,6 @@ Control {
                 anchors.right: parent.right
                 anchors.topMargin: parent.height / 2 - height / 2
                 anchors.rightMargin: anchors.topMargin
-
             }
         }
     }
@@ -67,35 +72,21 @@ Control {
         delegate: SkyListItemDelegate { width: parent.width}
         spacing: 1
         interactive: false
-        model: ListModel {
+        model: AirSituationListModel { }
+//        ListModel {
 
-            ListElement {
-                text1: "FFT2323"
-                text2: "B738 - M"
-                text3: "0000"
-            }
+//            ListElement {
+//                text1: "FFT2323"
+//                text2: "B738 - M"
+//                text3: "0000"
+//            }
 
-            ListElement {
-                text1: "RPA4543"
-                text2: "A832 - M"
-                text3: "0000"
-            }
-        }
-    }
-
-    MouseArea {
-        z: 100
-        width: horizontalPadding
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        cursorShape: Qt.SizeHorCursor
-
-        onPressed: previousX = mouseX
-        onMouseXChanged: {
-            var dx = mouseX - previousX
-            root.width = root.width + dx
-        }
+//            ListElement {
+//                text1: "RPA4543"
+//                text2: "A832 - M"
+//                text3: "0000"
+//            }
+//        }
     }
 
     MouseArea {

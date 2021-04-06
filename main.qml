@@ -16,18 +16,21 @@ ApplicationWindow {
 
     property real previousX
     property real previousY
-    property bool maximize: AppManager.maximizeAppWindow
-    property bool minimize: AppManager.minimizeAppWindow
-
-    onVisibilityChanged: AppManager.appWindowVisibility = visibility
-    onMaximizeChanged: root.showMaximized()
-    onMinimizeChanged: root.showMinimized()
 
     SkyWindowHeader {
         id: _menuBar
         width: parent.width
         height: 38
         anchors.top: parent.top
+
+        onSlCloseClicked: Qt.quit()
+        onSlMaximizeClicked: {
+            if (root.visibility === Window.FullScreen)
+                root.showNormal()
+            else
+                root.showFullScreen()
+        }
+        onSlMinimizeClicked: root.showMinimized()
 
         MouseArea {
             anchors.fill: parent
@@ -111,13 +114,12 @@ ApplicationWindow {
             loginError: imitLogin.loginError
             loginOk: imitLogin.loginOk
             loginInProgress: imitLogin.isBusy
-
         }
     }
     Component {
         id: _airViewComponent
 
-        AirView {
+        AirSituationView {
             id: _airView
 
         }
