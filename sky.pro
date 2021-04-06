@@ -20,6 +20,7 @@ SOURCES += \
         cpp/Login/loginViewModel.cpp \
         cpp/airSituationViewModel.cpp \
         cpp/airSituationViewModels/airSituationViewModel.cpp \
+        cpp/airSituationViewModels/flighPlansDeckModel.cpp \
         cpp/airSituationViewModels/flightPlansListModel.cpp \
         cpp/flightPlansListModel.cpp \
         cpp/loginViewModel.cpp \
@@ -49,6 +50,7 @@ HEADERS += \
     cpp/Login/loginViewModel.h \
     cpp/airSituationViewModel.h \
     cpp/airSituationViewModels/airSituationViewModel.h \
+    cpp/airSituationViewModels/flighPlansDeckModel.h \
     cpp/airSituationViewModels/flightPlansListModel.h \
     cpp/flightPlansListModel.h \
     cpp/loginViewModel.h \

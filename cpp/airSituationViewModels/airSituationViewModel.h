@@ -12,11 +12,7 @@ public:
 
 private:
 
-    enum Roles {
-        Color = Qt::UserRole + 1,
-        Title,
-        List
-    };
+
 
     std::vector<FlightPlansListModel> m_data;
 };
