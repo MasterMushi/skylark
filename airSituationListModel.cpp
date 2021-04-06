@@ -3,8 +3,8 @@
 
 AirSituationListModel::AirSituationListModel(QObject *parent) : QAbstractListModel(parent)
 {
-    m_data.push_back(QStringList{"text1", "text2", "text3"});
-    m_data.push_back(QStringList{"text4", "text5", "text6"});
+    m_data.push_back(QStringList{"FFT2323", "B738 - M", "0000"});
+    m_data.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
 }
 
 void AirSituationListModel::registerMe(const std::string &moduleName)

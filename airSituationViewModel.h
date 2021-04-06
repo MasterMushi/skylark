@@ -1,8 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include <QString>
-#include <QList>
+#include <vector>
 #include "airSituationListModel.h"
 
 class AirSituationViewModel : public QObject
@@ -12,5 +11,11 @@ public:
     explicit AirSituationViewModel(QObject *parent = nullptr);
 
 private:
-    QList<AirSituationListModel> m_airSituationListModels;
+    enum Roles {
+        Color = Qt::UserRole + 1,
+        Title,
+        List
+    };
+
+    std::vector<AirSituationListModel> m_data;
 };

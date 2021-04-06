@@ -73,20 +73,6 @@ Control {
         spacing: 1
         interactive: false
         model: AirSituationListModel { }
-//        ListModel {
-
-//            ListElement {
-//                text1: "FFT2323"
-//                text2: "B738 - M"
-//                text3: "0000"
-//            }
-
-//            ListElement {
-//                text1: "RPA4543"
-//                text2: "A832 - M"
-//                text3: "0000"
-//            }
-//        }
     }
 
     MouseArea {
