@@ -5,7 +5,7 @@ import Forms.AbstractForms 1.0
 import StyleConstants 1.0
 import ResourceProvider 1.0
 
-SkyToolBarIconButton {
+AirSituationToolBarIconButton {
     id: root
 
     signal accepted()

@@ -1,6 +1,6 @@
-module SkyWindowHeader
+module AppWindowHeader
 
-SkyWindowHeader 1.0 SkyWindowHeader.qml
+AppWindowHeader 1.0 AppWindowHeader.qml
 
 internal AtisButton AtisButton.qml
 internal DateLabel DateLabel.qml

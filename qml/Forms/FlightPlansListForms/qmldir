@@ -1,0 +1,7 @@
+module SkyListForms
+
+FlightPlansList 1.0 FlightPlansList.qml
+FlightPlansListPinArea 1.0 FlightPlansListPinArea.qml
+
+internal FlightPlansListItemDelegate FlightPlansListItemDelegate.qml
+internal FlightPlansListText FlightPlansListText.qml

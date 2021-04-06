@@ -23,7 +23,7 @@ ToolBar {
         Layout.alignment: Qt.AlignLeft
         spacing: StyleConstants.skyToolBarSpacing
 
-        SkyPointerComboBox {
+        AirSituationPointerComboBox {
             id: _pointerComboBox
             model: ListModel {
                 id: _pointerComboBoxModel
@@ -37,11 +37,11 @@ ToolBar {
             }
         }
 
-        SkyLayersCheckBox {
+        AirSituationLayersCheckBox {
             id: _layersCheckBox
         }
 
-        SkyRulerDialogButton {
+        AirSituationRulerDialogButton {
             id: _rulerDialogButton
         }
     }
@@ -55,42 +55,42 @@ ToolBar {
         Layout.alignment: Qt.AlignRight
         spacing: StyleConstants.skyToolBarSpacing
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _flightdataToolBarButton
             icon.source: Resources.icons.flightdata
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _runwayToolBarButton
             icon.source: Resources.icons.runway
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _fplToolBarButton
             icon.source: Resources.icons.fpl
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _weatherToolBarButton
             icon.source: Resources.icons.weather
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _gridToolBarButton
             icon.source: Resources.icons.grid
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _searchToolBarButton
             icon.source: Resources.icons.search
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _settingsToolBarButton
             icon.source: Resources.icons.settings
         }
 
-        SkyToolBarIconButton {
+        AirSituationToolBarIconButton {
             id: _helpToolBarButton
             icon.source: Resources.icons.help
         }

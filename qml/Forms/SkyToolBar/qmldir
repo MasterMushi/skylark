@@ -1,8 +1,0 @@
-module SkyToolBar
-
-SkyToolBar 1.0 SkyToolBar.qml
-
-internal SkyLayersCheckBox SkyLayersCheckBox.qml
-internal SkyPointerComboBox SkyPointerComboBox.qml
-internal SkyToolBarIconButton SkyToolBarIconButton.qml
-internal SkyRulerDialogButton SkyRulerDialogButton.qml

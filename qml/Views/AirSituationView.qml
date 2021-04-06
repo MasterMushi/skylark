@@ -1,33 +1,33 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import Forms.SkyToolBar 1.0
-import Forms.SkyListForms 1.0
+import Forms.AirSituationToolBar 1.0
+import Forms.FlightPlansListForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
 
 Page {
     id: root
 
-    header: SkyToolBar { }
+    header: AirSituationToolBar { }
 
     Item {
         anchors.fill: parent
 
-        SkyListPinArea {
+        FlightPlansListPinArea {
             anchors.left: parent.left
             anchors.top: parent.top
             height: parent.height
         }
 
-        SkyList {
+        FlightPlansList {
             x: 100
             y: 300
             backgroundColor: StyleConstants.arrivalListColor
             name: "Arrival"
         }
 
-        SkyList {
+        FlightPlansList {
             x: 300
             y: 400
             backgroundColor: StyleConstants.departureListColor

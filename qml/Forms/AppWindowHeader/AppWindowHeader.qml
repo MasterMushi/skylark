@@ -18,7 +18,7 @@ ToolBar {
 
     StreetLight {
         id: _sl
-            z: 100
+            z: 10
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 11
@@ -32,13 +32,13 @@ ToolBar {
     RowLayout {
         id: _pages
 
-        z: 100
+        z: 10
     }
 
     RowLayout { 
         id: _statusBar
 
-        z: 100
+        z: 10
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 11

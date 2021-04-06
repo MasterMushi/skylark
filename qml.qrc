@@ -54,26 +54,12 @@
         <file>resources/icons/streetlights/yellow.svg</file>
         <file>resources/icons/system_green.svg</file>
         <file>qml/Forms/AbstractForms/qmldir</file>
-        <file>qml/Forms/SkyToolBar/qmldir</file>
-        <file>qml/Forms/SkyToolBar/SkyToolBar.qml</file>
-        <file>qml/Forms/SkyToolBar/SkyToolBarIconButton.qml</file>
-        <file>qml/Forms/SkyToolBar/SkyLayersCheckBox.qml</file>
-        <file>qml/Forms/SkyToolBar/SkyPointerComboBox.qml</file>
-        <file>qml/Forms/SkyWindowHeader/AtisButton.qml</file>
-        <file>qml/Forms/SkyWindowHeader/qmldir</file>
-        <file>qml/Forms/SkyWindowHeader/SystemStatusButton.qml</file>
-        <file>qml/Forms/SkyWindowHeader/UserButton.qml</file>
-        <file>qml/Forms/SkyWindowHeader/DateLabel.qml</file>
-        <file>qml/Forms/SkyWindowHeader/TimeLabel.qml</file>
         <file>qml/Forms/AbstractForms/AbstractToolBarButton.qml</file>
-        <file>qml/Forms/SkyWindowHeader/SkyWindowHeader.qml</file>
         <file>qml/Forms/AbstractForms/AbstractLabel.qml</file>
         <file>qml/Forms/AbstractForms/AbstractToolBarPopup.qml</file>
         <file>qml/Shapes/PopupTriangle.qml</file>
         <file>qml/Shapes/qmldir</file>
-        <file>qml/Forms/SkyWindowHeader/StreetLight.qml</file>
         <file>qml/Forms/AbstractForms/AbstractImageControl.qml</file>
-        <file>qml/Forms/SkyToolBar/SkyRulerDialogButton.qml</file>
         <file>resources/icons/md/cross.svg</file>
         <file>resources/icons/md/atis letter.svg</file>
         <file>resources/icons/md/atis circle.svg</file>
@@ -85,13 +71,26 @@
         <file>qml/Forms/CommonForms/DownArrowIndicator.qml</file>
         <file>resources/icons/md/down arrow indicator.svg</file>
         <file>resources/icons/md/cross mini.svg</file>
-        <file>qml/Forms/SkyListForms/qmldir</file>
-        <file>qml/Forms/SkyListForms/SkyList.qml</file>
-        <file>qml/Forms/SkyListForms/SkyListItemDelegate.qml</file>
-        <file>qml/Forms/SkyListForms/SkyListText.qml</file>
         <file>qml/Managers/GeneralTimeManager.qml</file>
-        <file>qml/Managers/UserManager.qml</file>
-        <file>qml/Forms/SkyListForms/SkyListPinArea.qml</file>
         <file>qml/Managers/qmldir</file>
+        <file>qml/Forms/FlightPlansListForms/FlightPlansList.qml</file>
+        <file>qml/Forms/FlightPlansListForms/FlightPlansListItemDelegate.qml</file>
+        <file>qml/Forms/FlightPlansListForms/FlightPlansListPinArea.qml</file>
+        <file>qml/Forms/FlightPlansListForms/FlightPlansListText.qml</file>
+        <file>qml/Forms/FlightPlansListForms/qmldir</file>
+        <file>qml/Forms/AirSituationToolBar/AirSituationLayersCheckBox.qml</file>
+        <file>qml/Forms/AirSituationToolBar/AirSituationPointerComboBox.qml</file>
+        <file>qml/Forms/AirSituationToolBar/AirSituationRulerDialogButton.qml</file>
+        <file>qml/Forms/AirSituationToolBar/AirSituationToolBar.qml</file>
+        <file>qml/Forms/AirSituationToolBar/AirSituationToolBarIconButton.qml</file>
+        <file>qml/Forms/AirSituationToolBar/qmldir</file>
+        <file>qml/Forms/AppWindowHeader/AppWindowHeader.qml</file>
+        <file>qml/Forms/AppWindowHeader/AtisButton.qml</file>
+        <file>qml/Forms/AppWindowHeader/DateLabel.qml</file>
+        <file>qml/Forms/AppWindowHeader/qmldir</file>
+        <file>qml/Forms/AppWindowHeader/StreetLight.qml</file>
+        <file>qml/Forms/AppWindowHeader/SystemStatusButton.qml</file>
+        <file>qml/Forms/AppWindowHeader/TimeLabel.qml</file>
+        <file>qml/Forms/AppWindowHeader/UserButton.qml</file>
     </qresource>
 </RCC>

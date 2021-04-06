@@ -14,7 +14,7 @@ AbstractToolBarButton {
     horizontalPadding: 8
     icon.source: Resources.icons.user
 
-    text: UserManager.currentUser
+    text: loginModel.user
 
     contentItem: RowLayout {
 

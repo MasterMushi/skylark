@@ -5,12 +5,12 @@
 #include <QStringList>
 #include <vector>
 
-class AirSituationListModel : public QAbstractListModel
+class FlightPlansListModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit AirSituationListModel(QObject *parent = nullptr);
+    explicit FlightPlansListModel(QObject *parent = nullptr);
 
     static void registerMe(const std::string& moduleName);
 

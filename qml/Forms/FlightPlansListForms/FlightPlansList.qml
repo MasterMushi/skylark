@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.12
 import Forms.CommonForms 1.0
 import StyleConstants 1.0
 import Texts 1.0
-import AirSituationListModel 1.0
+import FlightPlansListModel 1.0
 
 Control {
     id: root
@@ -69,10 +69,10 @@ Control {
     contentItem: ListView {
         implicitHeight: contentHeight
         implicitWidth: contentWidth
-        delegate: SkyListItemDelegate { width: parent.width}
+        delegate: FlightPlansListItemDelegate { width: parent.width}
         spacing: 1
         interactive: false
-        model: AirSituationListModel { }
+        model: FlightPlansListModel { }
     }
 
     MouseArea {
@@ -86,8 +86,10 @@ Control {
         onPressed: previousY = mouseY
         onMouseXChanged: {
             var dy = mouseY - previousY
-            root.y = root.y + dy
-            root.height = parent.height - dy
+            if (root.y > 0) {
+                root.y = root.y + dy
+                root.height = parent.height - dy
+            }
         }
     }
 }

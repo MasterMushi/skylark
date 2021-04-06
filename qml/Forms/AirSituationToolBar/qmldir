@@ -1,0 +1,8 @@
+module AirSituationToolBar
+
+AirSituationToolBar 1.0 AirSituationToolBar.qml
+
+internal AirSituationLayersCheckBox AirSituationLayersCheckBox.qml
+internal AirSituationPointerComboBox AirSituationPointerComboBox.qml
+internal AirSituationToolBarIconButton AirSituationToolBarIconButton.qml
+internal AirSituationRulerDialogButton AirSituationRulerDialogButton.qml

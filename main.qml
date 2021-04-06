@@ -1,9 +1,9 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.15
-import Managers 1.0
-import Forms.SkyWindowHeader 1.0
+import Forms.AppWindowHeader 1.0
 import StyleConstants 1.0
+import LoginViewModel 1.0
 import Views 1.0
 
 ApplicationWindow {
@@ -17,7 +17,7 @@ ApplicationWindow {
     property real previousX
     property real previousY
 
-    SkyWindowHeader {
+    AppWindowHeader {
         id: _menuBar
         width: parent.width
         height: 38
@@ -108,12 +108,12 @@ ApplicationWindow {
 
         LoginView {
             id: _loginView
-            onLogin: imitLogin.checkLogin(user, pass)
+            onLogin: LoginViewModel.checkLogin(user, pass)
             onLoginSuccess: _stack.push(_airViewComponent);
 
-            loginError: imitLogin.loginError
-            loginOk: imitLogin.loginOk
-            loginInProgress: imitLogin.isBusy
+            loginError: LoginViewModel.loginError
+            loginOk: LoginViewModel.loginOk
+            loginInProgress: LoginViewModel.isBusy
         }
     }
     Component {
@@ -121,7 +121,6 @@ ApplicationWindow {
 
         AirSituationView {
             id: _airView
-
         }
     }
 }

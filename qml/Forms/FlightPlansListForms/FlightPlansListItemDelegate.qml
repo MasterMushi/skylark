@@ -19,19 +19,19 @@ ItemDelegate {
 
         }
 
-        SkyListText {
+        FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
             Layout.preferredWidth: content.width / 4
             text: text1
         }
 
-        SkyListText {
+        FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
             Layout.preferredWidth: content.width / 4
             text: text2
         }
 
-        SkyListText {
+        FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
             Layout.fillWidth: true
             text: text3

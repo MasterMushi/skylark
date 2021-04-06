@@ -1,4 +1,3 @@
 module Managers
 
 singleton GeneralTimeManager 1.0 GeneralTimeManager.qml
-singleton UserManager 1.0 UserManager.qml

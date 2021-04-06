@@ -1,18 +1,18 @@
-#include "airSituationListModel.h"
+#include "flightPlansListModel.h"
 #include <QQmlEngine>
 
-AirSituationListModel::AirSituationListModel(QObject *parent) : QAbstractListModel(parent)
+FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel(parent)
 {
     m_data.push_back(QStringList{"FFT2323", "B738 - M", "0000"});
     m_data.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
 }
 
-void AirSituationListModel::registerMe(const std::string &moduleName)
+void FlightPlansListModel::registerMe(const std::string &moduleName)
 {
-    qmlRegisterType<AirSituationListModel>(moduleName.c_str(), 1, 0, "AirSituationListModel");
+    qmlRegisterType<FlightPlansListModel>(moduleName.c_str(), 1, 0, "FlightPlansListModel");
 }
 
-int AirSituationListModel::rowCount(const QModelIndex &parent) const
+int FlightPlansListModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;
@@ -21,7 +21,7 @@ int AirSituationListModel::rowCount(const QModelIndex &parent) const
     return m_data.size();
 }
 
-QVariant AirSituationListModel::data(const QModelIndex &index, int role) const
+QVariant FlightPlansListModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return QVariant();
@@ -39,7 +39,7 @@ QVariant AirSituationListModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QHash<int, QByteArray> AirSituationListModel::roleNames() const
+QHash<int, QByteArray> FlightPlansListModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
     roles[Text1Role] = "text1";
@@ -49,7 +49,7 @@ QHash<int, QByteArray> AirSituationListModel::roleNames() const
     return roles;
 }
 
-//void AirSituationListModel::add()
+//void FlightPlansListModel::add()
 //{
 //    beginInsertRows(QModelIndex(), m_data.size(), m_data.size());
 //    m_data.push_back(QStringList{"text1", "text2", "text3"});

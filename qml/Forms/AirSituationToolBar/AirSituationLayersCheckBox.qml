@@ -6,7 +6,7 @@ import ResourceProvider 1.0
 import StyleConstants 1.0
 import Texts 1.0
 
-SkyPointerComboBox {
+AirSituationPointerComboBox {
     id: root
 
     contentItem: Image {
