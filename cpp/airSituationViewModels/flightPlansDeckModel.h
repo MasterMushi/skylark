@@ -6,7 +6,7 @@
 #include <vector>
 #include "flightPlansListModel.h"
 
-class FlightPlansDeckModel : public QAbstractListModel
+class FlightPlansDeckModel : public QObject
 {
     Q_OBJECT
 public:
@@ -19,17 +19,5 @@ public:
     virtual QHash<int, QByteArray> roleNames() const;
 
 private:
-    enum Roles {
-        Color = Qt::UserRole + 1,
-        Title,
-        List,
-        Position,
-        X,
-        Y,
-        Height,
-        Width,
-        FlightPlans
-    };
-
     std::vector<FlightPlansListModel> m_data;
 };

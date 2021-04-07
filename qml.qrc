@@ -73,11 +73,6 @@
         <file>resources/icons/md/cross mini.svg</file>
         <file>qml/Managers/GeneralTimeManager.qml</file>
         <file>qml/Managers/qmldir</file>
-        <file>qml/Forms/FlightPlansListForms/FlightPlansList.qml</file>
-        <file>qml/Forms/FlightPlansListForms/FlightPlansListItemDelegate.qml</file>
-        <file>qml/Forms/FlightPlansListForms/FlightPlansListPinArea.qml</file>
-        <file>qml/Forms/FlightPlansListForms/FlightPlansListText.qml</file>
-        <file>qml/Forms/FlightPlansListForms/qmldir</file>
         <file>qml/Forms/AirSituationToolBar/AirSituationLayersCheckBox.qml</file>
         <file>qml/Forms/AirSituationToolBar/AirSituationPointerComboBox.qml</file>
         <file>qml/Forms/AirSituationToolBar/AirSituationRulerDialogButton.qml</file>
@@ -92,5 +87,11 @@
         <file>qml/Forms/AppWindowHeader/SystemStatusButton.qml</file>
         <file>qml/Forms/AppWindowHeader/TimeLabel.qml</file>
         <file>qml/Forms/AppWindowHeader/UserButton.qml</file>
+        <file>qml/Forms/FlightPlansDeckForms/FlightPlansList.qml</file>
+        <file>qml/Forms/FlightPlansDeckForms/FlightPlansDeckPinArea.qml</file>
+        <file>qml/Forms/FlightPlansDeckForms/FlightPlansListItemDelegate.qml</file>
+        <file>qml/Forms/FlightPlansDeckForms/FlightPlansListText.qml</file>
+        <file>qml/Forms/FlightPlansDeckForms/qmldir</file>
+        <file>qml/Forms/FlightPlansDeckForms/FlightPlansDeck.qml</file>
     </qresource>
 </RCC>

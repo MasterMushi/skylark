@@ -66,7 +66,5 @@ AirSituationToolBarIconButton {
             radius: StyleConstants.toolBarFormsRadius
             color: root.palette.dark
         }
-
-
     }
 }

@@ -1,15 +1,17 @@
-#include "flighPlansDeckModel.h"
+#include "flightPlansDeckModel.h"
 
 
-FlightPlansDeckModel::FlightPlansDeckModel(QObject *parent) : QAbstractListModel(parent)
+FlightPlansDeckModel::FlightPlansDeckModel(QObject *parent) : QObject(parent)
 {
-    //m_data.push_back(QStringList{"FFT2323", "B738 - M", "0000"});
-    //m_data.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
+    FlightPlansListModel arrival(QColor("red"), "Arrival");
+    FlightPlansListModel departure(QColor("blue"), "Departure");
+    m_data.push_back(arrival);
+    m_data.push_back(departure);
 }
 
 void FlightPlansDeckModel::registerMe(const std::string &moduleName)
 {
-    qmlRegisterType<FlightPlansListModel>(moduleName.c_str(), 1, 0, "FlightPlansListModel");
+    qmlRegisterType<FlightPlansDeckModel>(moduleName.c_str(), 1, 0, "FlightPlansDeckModel");
 }
 
 int FlightPlansDeckModel::rowCount(const QModelIndex &parent) const
@@ -36,15 +38,12 @@ QVariant FlightPlansDeckModel::data(const QModelIndex &index, int role) const
 //        return m_data.at(index.row()).at(2);
 //    default:
 //        return QVariant();
-//    }
+    //    }
 }
 
 QHash<int, QByteArray> FlightPlansDeckModel::roleNames() const
 {
-    QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
-//    roles[Text1Role] = "text1";
-//    roles[Text2Role] = "text2";
-//    roles[Text3Role] = "text3";
 
-    return roles;
 }
+
+

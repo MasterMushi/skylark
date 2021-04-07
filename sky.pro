@@ -15,14 +15,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         cpp/airSituationViewModels/airSituationViewModel.cpp \
-        cpp/airSituationViewModels/flighPlansDeckModel.cpp \
+        cpp/airSituationViewModels/flightPlansDeckModel.cpp \
         cpp/airSituationViewModels/flightPlansListModel.cpp \
         cpp/loginViewModels/loginViewModel.cpp \
         main.cpp
 
 HEADERS += \
     cpp/airSituationViewModels/airSituationViewModel.h \
-    cpp/airSituationViewModels/flighPlansDeckModel.h \
+    cpp/airSituationViewModels/flightPlansDeckModel.h \
     cpp/airSituationViewModels/flightPlansListModel.h \
     cpp/loginViewModels/loginViewModel.h \
 

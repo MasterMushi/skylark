@@ -10,7 +10,7 @@ Control {
     id: root
     width: 412
 
-    property string name: "List Title"
+    property string title: _content.model.title
     property bool pinned: false
     property bool enteredPinArea: false
 
@@ -18,6 +18,7 @@ Control {
     property real previousY
 
     property alias backgroundColor: _background.color
+    property alias model: _content.model
 
     horizontalPadding: 4
     bottomPadding: 4
@@ -52,8 +53,9 @@ Control {
             CustomMenuText {
                 id: _title
                 anchors.centerIn: parent
-                text: root.name
+                text: root.title
                 horizontalAlignment: Text.AlignHCenter
+
             }
 
             CrossIndicator {
@@ -67,12 +69,12 @@ Control {
     }
 
     contentItem: ListView {
+        id: _content
         implicitHeight: contentHeight
         implicitWidth: contentWidth
         delegate: FlightPlansListItemDelegate { width: parent.width}
         spacing: 1
         interactive: false
-        model: FlightPlansListModel { }
     }
 
     MouseArea {

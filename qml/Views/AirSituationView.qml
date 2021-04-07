@@ -2,9 +2,10 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Forms.AirSituationToolBar 1.0
-import Forms.FlightPlansListForms 1.0
+import Forms.FlightPlansDeckForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
+import FlightPlansListModel 1.0
 
 Page {
     id: root
@@ -14,7 +15,7 @@ Page {
     Item {
         anchors.fill: parent
 
-        FlightPlansListPinArea {
+        FlightPlansDeckPinArea {
             anchors.left: parent.left
             anchors.top: parent.top
             height: parent.height
@@ -24,14 +25,14 @@ Page {
             x: 100
             y: 300
             backgroundColor: StyleConstants.arrivalListColor
-            name: "Arrival"
+            model: FlightPlansListModel {}
         }
 
         FlightPlansList {
             x: 300
             y: 400
             backgroundColor: StyleConstants.departureListColor
-            name: "Departure"
+            //name: "Departure"
         }
 
         Image {
