@@ -2,8 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "loginViewModel.h"
-#include "flightPlansListModel.h"
+#include "cpp/loginViewModels/loginViewModel.h"
+#include "cpp/airSituationViewModels/flightPlansListModel.h"
 
 int main(int argc, char *argv[])
 {

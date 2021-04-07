@@ -27,7 +27,7 @@ AirSituationToolBarIconButton {
         contentItem: RowLayout {
             spacing: 8
 
-            SkyToolBarIconButton {
+            AirSituationToolBarIconButton {
                 id: _acceptButton
                 Layout.alignment: Qt.AlignVCenter
                 palette.base: StyleConstants.darkBaseColor
@@ -47,7 +47,7 @@ AirSituationToolBarIconButton {
                 color: "grey"
             }
 
-            SkyToolBarIconButton {
+            AirSituationToolBarIconButton {
                 id: _declineButton
                 Layout.alignment: Qt.AlignVCenter
                 palette.base: StyleConstants.darkBaseColor

@@ -2,13 +2,15 @@
 
 #include <QObject>
 #include <QAbstractListModel>
+#include <QQmlEngine>
+#include <vector>
 #include "flightPlansListModel.h"
 
-class FlighPlansDeckModel : public QAbstractListModel
+class FlightPlansDeckModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit FlighPlansDeckModel(QObject *parent = nullptr);
+    explicit FlightPlansDeckModel(QObject *parent = nullptr);
 
     static void registerMe(const std::string& moduleName);
 

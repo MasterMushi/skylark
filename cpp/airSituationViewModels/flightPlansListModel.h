@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QQmlEngine>
 #include <QAbstractListModel>
 #include <QStringList>
 #include <vector>

@@ -14,20 +14,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        airSituationViewModel.cpp \
-        cpp/AirSituation/airSituationViewModel.cpp \
-        cpp/AirSituation/flightPlansListModel.cpp \
-        cpp/Login/loginViewModel.cpp \
-        cpp/airSituationViewModel.cpp \
         cpp/airSituationViewModels/airSituationViewModel.cpp \
         cpp/airSituationViewModels/flighPlansDeckModel.cpp \
         cpp/airSituationViewModels/flightPlansListModel.cpp \
-        cpp/flightPlansListModel.cpp \
-        cpp/loginViewModel.cpp \
         cpp/loginViewModels/loginViewModel.cpp \
-        flightPlansListModel.cpp \
-        loginViewModel.cpp \
         main.cpp
+
+HEADERS += \
+    cpp/airSituationViewModels/airSituationViewModel.h \
+    cpp/airSituationViewModels/flighPlansDeckModel.h \
+    cpp/airSituationViewModels/flightPlansListModel.h \
+    cpp/loginViewModels/loginViewModel.h \
 
 RESOURCES += qml.qrc
 
@@ -42,20 +39,5 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    airSituationViewModel.h \
-    cpp/AirSituation/airSituationViewModel.h \
-    cpp/AirSituation/flightPlansListModel.h \
-    cpp/Login/loginViewModel.h \
-    cpp/airSituationViewModel.h \
-    cpp/airSituationViewModels/airSituationViewModel.h \
-    cpp/airSituationViewModels/flighPlansDeckModel.h \
-    cpp/airSituationViewModels/flightPlansListModel.h \
-    cpp/flightPlansListModel.h \
-    cpp/loginViewModel.h \
-    cpp/loginViewModels/loginViewModel.h \
-    flightPlansListModel.h \
-    loginViewModel.h
 
 DISTFILES +=
