@@ -1,12 +1,11 @@
 #include "flightPlansDeckModel.h"
 
-
 FlightPlansDeckModel::FlightPlansDeckModel(QObject *parent) : QObject(parent)
 {
-    FlightPlansListModel arrival(QColor("red"), "Arrival");
-    FlightPlansListModel departure(QColor("blue"), "Departure");
-    m_data.push_back(arrival);
-    m_data.push_back(departure);
+    FlightPlansListModel* arrival = new FlightPlansListModel();
+    FlightPlansListModel* departure = new FlightPlansListModel();
+    m_fplists.append(arrival);
+    m_fplists.append(departure);
 }
 
 void FlightPlansDeckModel::registerMe(const std::string &moduleName)
@@ -14,36 +13,40 @@ void FlightPlansDeckModel::registerMe(const std::string &moduleName)
     qmlRegisterType<FlightPlansDeckModel>(moduleName.c_str(), 1, 0, "FlightPlansDeckModel");
 }
 
-int FlightPlansDeckModel::rowCount(const QModelIndex &parent) const
+QQmlListProperty<FlightPlansListModel> FlightPlansDeckModel::fplists()
 {
-    if (parent.isValid()) {
-        return 0;
-    }
-
-    return m_data.size();
+    return {this, this,
+             &FlightPlansDeckModel::fplistCount,
+             &FlightPlansDeckModel::fplist};
 }
 
-QVariant FlightPlansDeckModel::data(const QModelIndex &index, int role) const
+//void FlightPlansDeckModel::appendFplist(FlightPlansListModel* p)
+//{
+//    m_fplists.append(p);
+//}
+int FlightPlansDeckModel::fplistCount() const
 {
-//    if (!index.isValid()) {
-//        return QVariant();
-//    }
-
-//    switch (role) {
-//    case Text1Role:
-//        return m_data.at(index.row()).at(0);
-//    case Text2Role:
-//        return m_data.at(index.row()).at(1);
-//    case Text3Role:
-//        return m_data.at(index.row()).at(2);
-//    default:
-//        return QVariant();
-    //    }
+    return m_fplists.count();
 }
 
-QHash<int, QByteArray> FlightPlansDeckModel::roleNames() const
+FlightPlansListModel *FlightPlansDeckModel::fplist(int index) const
+{
+    return m_fplists.at(index);
+}
+
+int FlightPlansDeckModel::fplistCount(QQmlListProperty<FlightPlansListModel>* p)
+{
+    Q_UNUSED(p)
+    return reinterpret_cast< FlightPlansDeckModel* >(p->data)->fplistCount();
+}
+
+FlightPlansListModel* FlightPlansDeckModel::fplist(QQmlListProperty<FlightPlansListModel>* p, int index)
+{
+    Q_UNUSED(p)
+    return reinterpret_cast< FlightPlansDeckModel* >(p->data)->fplist(index);
+}
+
+int ds()
 {
 
 }
-
-

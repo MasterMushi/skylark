@@ -3,21 +3,29 @@
 #include <QObject>
 #include <QAbstractListModel>
 #include <QQmlEngine>
-#include <vector>
+#include <QQmlListProperty>
+#include <QVector>
 #include "flightPlansListModel.h"
 
 class FlightPlansDeckModel : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QQmlListProperty<FlightPlansListModel> fplists READ fplists)
+    QML_ELEMENT
+
 public:
-    explicit FlightPlansDeckModel(QObject *parent = nullptr);
+    FlightPlansDeckModel(QObject *parent = nullptr);
 
     static void registerMe(const std::string& moduleName);
 
-    virtual int rowCount(const QModelIndex &parent) const;
-    virtual QVariant data(const QModelIndex &index, int role) const;
-    virtual QHash<int, QByteArray> roleNames() const;
+    QQmlListProperty<FlightPlansListModel> fplists();
+    int fplistCount() const;
+    FlightPlansListModel *fplist(int) const;
 
 private:
-    std::vector<FlightPlansListModel> m_data;
+    //static void appendFplist(QQmlListProperty<FlightPlansListModel>*, FlightPlansListModel*);
+    int fplistCount(QQmlListProperty<FlightPlansListModel>*);
+    FlightPlansListModel* fplist(QQmlListProperty<FlightPlansListModel>*, int);
+
+    QVector<FlightPlansListModel *> m_fplists;
 };

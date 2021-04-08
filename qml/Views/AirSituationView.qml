@@ -15,6 +15,8 @@ Page {
     Item {
         anchors.fill: parent
 
+        FlightPlansDeck {}
+
         FlightPlansDeckPinArea {
             anchors.left: parent.left
             anchors.top: parent.top

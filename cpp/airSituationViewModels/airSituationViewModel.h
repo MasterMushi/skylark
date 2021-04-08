@@ -12,7 +12,5 @@ public:
 
 private:
 
-
-
     std::vector<FlightPlansListModel> m_data;
 };

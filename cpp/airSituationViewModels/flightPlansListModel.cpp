@@ -1,10 +1,7 @@
 #include "flightPlansListModel.h"
 
-FlightPlansListModel::FlightPlansListModel(QColor color, QString title, QObject *parent) : QAbstractListModel(parent)
+FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel(parent)
 {
-    m_color = color;
-    m_title = title;
-
     m_flightPlansData.push_back(QStringList{"FFT2323", "B738 - M", "0000"});
     m_flightPlansData.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
     m_flightPlansData.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
@@ -71,6 +68,20 @@ void FlightPlansListModel::setColor(QColor color)
 QString FlightPlansListModel::title() const
 {
     return m_title;
+}
+
+int FlightPlansListModel::position() const
+{
+    return m_position;
+}
+
+void FlightPlansListModel::setPosition(int position)
+{
+    if (m_position != position)
+    {
+        m_position = position;
+        emit positionChanged();
+    }
 }
 
 int FlightPlansListModel::x() const

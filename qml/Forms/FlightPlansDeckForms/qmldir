@@ -1,5 +1,6 @@
 module FlightPlansDeckForms
 
+FlightPlansDeck 1.0 FlightPlansDeck.qml
 FlightPlansList 1.0 FlightPlansList.qml
 FlightPlansDeckPinArea 1.0 FlightPlansDeckPinArea.qml
 

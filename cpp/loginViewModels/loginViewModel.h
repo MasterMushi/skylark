@@ -8,14 +8,14 @@
 class LoginViewModel : public QObject
 {
     Q_OBJECT
-public:
-    explicit LoginViewModel(QObject *parent = nullptr);
-
-    Q_INVOKABLE void checkLogin(const QString& user, const QString& pass);
     Q_PROPERTY(bool isBusy READ isBusy NOTIFY busyChanged)
     Q_PROPERTY(bool loginError READ loginError NOTIFY loginErrorChanged)
     Q_PROPERTY(bool loginOk READ loginOk NOTIFY loginOkChanged)
     Q_PROPERTY(QString user READ user NOTIFY userChanged)
+public:
+    explicit LoginViewModel(QObject *parent = nullptr);
+
+    Q_INVOKABLE void checkLogin(const QString& user, const QString& pass);
 
     static void registerSingletonMe(const std::string& moduleName);
 

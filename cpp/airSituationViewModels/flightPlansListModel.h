@@ -10,10 +10,6 @@
 class FlightPlansListModel : public QAbstractListModel
 {
     Q_OBJECT
-
-public:
-    explicit FlightPlansListModel(QColor color, QString title, QObject *parent = nullptr);
-
     Q_PROPERTY(QColor color READ color NOTIFY colorChanged)
     Q_PROPERTY(QString title READ title CONSTANT)
     Q_PROPERTY(int position READ position NOTIFY positionChanged)
@@ -21,6 +17,9 @@ public:
     Q_PROPERTY(int y READ y NOTIFY yChanged)
     Q_PROPERTY(int width READ width NOTIFY widthChanged)
     Q_PROPERTY(int height READ height NOTIFY heightChanged)
+
+public:
+    explicit FlightPlansListModel(QObject *parent = nullptr);
 
     static void registerMe(const std::string& moduleName);
 
