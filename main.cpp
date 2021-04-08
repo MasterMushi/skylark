@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
     // Here register all c++ models
     LoginViewModel::registerSingletonMe("LoginViewModel");
-    //FlightPlansListModel::registerMe("FlightPlansListModel");
+    FlightPlansListModel::registerMe("FlightPlansListModel");
     FlightPlansDeckModel::registerMe("FlightPlansDeckModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

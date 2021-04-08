@@ -10,7 +10,8 @@
 class FlightPlansListModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QColor color READ color NOTIFY colorChanged)
+    Q_PROPERTY(QColor pinnedColor READ pinnedColor)
+    Q_PROPERTY(QColor unpinnedColor READ unpinnedColor)
     Q_PROPERTY(QString title READ title CONSTANT)
     Q_PROPERTY(int position READ position NOTIFY positionChanged)
     Q_PROPERTY(int x READ x NOTIFY xChanged)
@@ -27,8 +28,8 @@ public:
     virtual QVariant data(const QModelIndex &index, int role) const;
     virtual QHash<int, QByteArray> roleNames() const;
 
-    QColor color() const;
-    void setColor(QColor color);
+    QColor pinnedColor() const;
+    QColor unpinnedColor() const;
 
     QString title() const;
 
@@ -48,7 +49,6 @@ public:
     void setHeight(int height);
 
 signals:
-    void colorChanged();
     void positionChanged();
     void xChanged();
     void yChanged();
@@ -67,7 +67,8 @@ private:
         Unpin
     };
 
-    QColor m_color = QColor("purple");
+    QColor m_pinnedColor = QColor("purple");
+    QColor m_unpinnedColor = QColor("purple");
     QString m_title = "Title";
     int m_position = Hide;
     int m_x = 0;

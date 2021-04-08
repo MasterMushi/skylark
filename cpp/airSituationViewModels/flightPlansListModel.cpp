@@ -51,18 +51,14 @@ QHash<int, QByteArray> FlightPlansListModel::roleNames() const
     return roles;
 }
 
-QColor FlightPlansListModel::color() const
+QColor FlightPlansListModel::pinnedColor() const
 {
-    return m_color;
+    return m_pinnedColor;
 }
 
-void FlightPlansListModel::setColor(QColor color)
+QColor FlightPlansListModel::unpinnedColor() const
 {
-    if (m_color != color)
-    {
-        m_color = color;
-        emit colorChanged();
-    }
+    return m_unpinnedColor;
 }
 
 QString FlightPlansListModel::title() const

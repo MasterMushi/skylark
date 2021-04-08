@@ -6,7 +6,7 @@ import StyleConstants 1.0
 import Texts 1.0
 import FlightPlansListModel 1.0
 
-Control {
+ItemDelegate {
     id: root
     width: 412
 

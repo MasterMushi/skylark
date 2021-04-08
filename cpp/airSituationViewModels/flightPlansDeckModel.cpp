@@ -1,52 +1,47 @@
 #include "flightPlansDeckModel.h"
 
-FlightPlansDeckModel::FlightPlansDeckModel(QObject *parent) : QObject(parent)
+FlightPlansDeckModel::FlightPlansDeckModel(QObject *parent) : QAbstractListModel(parent)
 {
-    FlightPlansListModel* arrival = new FlightPlansListModel();
-    FlightPlansListModel* departure = new FlightPlansListModel();
-    m_fplists.append(arrival);
-    m_fplists.append(departure);
+
 }
 
-void FlightPlansDeckModel::registerMe(const std::string &moduleName)
+int FlightPlansDeckModel::rowCount(const QModelIndex &parent) const
 {
-    qmlRegisterType<FlightPlansDeckModel>(moduleName.c_str(), 1, 0, "FlightPlansDeckModel");
+    if (parent.isValid()) {
+        return 0;
+    }
+
+    return m_flightPlansLists.size();
 }
 
-QQmlListProperty<FlightPlansListModel> FlightPlansDeckModel::fplists()
+QVariant FlightPlansDeckModel::data(const QModelIndex &index, int role) const
 {
-    return {this, this,
-             &FlightPlansDeckModel::fplistCount,
-             &FlightPlansDeckModel::fplist};
+    if (!index.isValid()) {
+        return QVariant();
+    }
+
+    switch (role) {
+    case Color:
+        return m_flightPlansLists.at(index.row()).pinnedColor();
+    case Title:
+        return m_flightPlansLists.at(index.row()).title();
+    case Position:
+        return m_flightPlansLists.at(index.row()).position();
+    case X:
+        return m_flightPlansLists.at(index.row()).x();
+    case Y:
+        return m_flightPlansLists.at(index.row()).y();
+    default:
+        return QVariant();
+    }
 }
 
-//void FlightPlansDeckModel::appendFplist(FlightPlansListModel* p)
-//{
-//    m_fplists.append(p);
-//}
-int FlightPlansDeckModel::fplistCount() const
+QHash<int, QByteArray> FlightPlansDeckModel::roleNames() const
 {
-    return m_fplists.count();
-}
+    QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
+    roles[Color] = "listColor";
+    roles[Title] = "listTitle";
+    roles[Position] = "position";
 
-FlightPlansListModel *FlightPlansDeckModel::fplist(int index) const
-{
-    return m_fplists.at(index);
-}
-
-int FlightPlansDeckModel::fplistCount(QQmlListProperty<FlightPlansListModel>* p)
-{
-    Q_UNUSED(p)
-    return reinterpret_cast< FlightPlansDeckModel* >(p->data)->fplistCount();
-}
-
-FlightPlansListModel* FlightPlansDeckModel::fplist(QQmlListProperty<FlightPlansListModel>* p, int index)
-{
-    Q_UNUSED(p)
-    return reinterpret_cast< FlightPlansDeckModel* >(p->data)->fplist(index);
-}
-
-int ds()
-{
-
+    return roles;
 }
