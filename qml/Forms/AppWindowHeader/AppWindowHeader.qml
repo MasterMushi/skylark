@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import StyleConstants 1.0
-import Managers 1.0
+import LoginViewModel 1.0
 
 ToolBar {
     id: root
@@ -45,7 +45,7 @@ ToolBar {
         Layout.alignment: Qt.AlignRight
         spacing: StyleConstants.skyWindowHeaderSpacing
 
-        enabled: UserManager.userLogined
+        enabled: LoginViewModel.loginOk
 
         AtisButton {
         }

@@ -17,7 +17,7 @@ ItemDelegate {
     property real previousX
     property real previousY
 
-    property alias backgroundColor: _background.color
+    property color pinnedBackgroundColor;
     property alias model: _content.model
 
     horizontalPadding: 4
@@ -93,5 +93,10 @@ ItemDelegate {
                 root.height = parent.height - dy
             }
         }
+    }
+
+    states: State {
+        name: "pinned"
+//        ParentChange { target: root; parent: }
     }
 }
