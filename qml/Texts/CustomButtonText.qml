@@ -11,4 +11,5 @@ Text {
     
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
+    elide: Text.ElideRight
 }

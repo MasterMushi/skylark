@@ -19,15 +19,15 @@ AirSituationPointerComboBox {
     model: ListModel {
         id: _inspectorComboBoxModel
         Component.onCompleted: {
-                    append({ "text": "UIR/FIR", "check": false });
-                    append({ "text": "Airports", "check": true });
-                    append({ "text": "Restrictive airspace", "check": true });
-                    append({ "text": "Controlled airspace", "check": false });
-                    append({ "text": "Routes", "check": false });
-                    append({ "text": "Navaids", "check": false });
-                    append({ "text": "SID", "check": false });
-                    append({ "text": "STAR", "check": false });
-                    append({ "text": "Approach", "check": false });
+            append({ "text": "UIR/FIR", "check": false });
+            append({ "text": "Airports", "check": true });
+            append({ "text": "Restrictive airspace", "check": true });
+            append({ "text": "Controlled airspace", "check": false });
+            append({ "text": "Routes", "check": false });
+            append({ "text": "Navaids", "check": false });
+            append({ "text": "SID", "check": false });
+            append({ "text": "STAR", "check": false });
+            append({ "text": "Approach", "check": false });
         }
     }
 
@@ -52,6 +52,8 @@ AirSituationPointerComboBox {
                 elide: Text.ElideRight
             }
         }
+
+        onClicked: check = !check
 
         highlighted: highlightedIndex === index
 
@@ -87,6 +89,6 @@ AirSituationPointerComboBox {
 
     popup {
         width: 245
-    }
 
+    }
 }

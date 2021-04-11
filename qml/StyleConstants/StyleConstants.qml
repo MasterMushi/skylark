@@ -9,6 +9,7 @@ QtObject {
     readonly property color backgroundColor: "#000000"
     readonly property color lightBaseColor: "#343447"
     readonly property color darkBaseColor: "#22222e"
+    readonly property color blackColor: "#000000"
     readonly property color highlightColor: "#9494ff"
     readonly property color frameColor: "#dddded"
     readonly property color formBorderBaseColor: "#cecedf"
@@ -20,15 +21,16 @@ QtObject {
     readonly property color buttonActiveColor: "#0f0f1a"
 
     //lists colors
-    readonly property color arrivalListColor: "#32c60008"
-    readonly property color flightPlansListColor: "#9ec600"
-    readonly property color runwaysListColor: "#00c65b"
-    readonly property color weatherListColor: "#00bac6"
-    readonly property color departureListColor: "#320050ac"
-    readonly property color pushBackListColor: "#03a000"
-    readonly property color taxiListColor: "#b18000"
-    readonly property color otherListColor: "#b600c6"
-
+    readonly property color arrivalPinnedColor: "#23c60008"
+    readonly property color arrivalUnpinnedColor: "#32c60008"
+    readonly property color flightPlansColor: "#329ec600"
+    readonly property color runwaysColor: "#3200c65b"
+    readonly property color weatherColor: "#3200bac6"
+    readonly property color departurePinnedColor: "#230050ac"
+    readonly property color departureUnpinnedColor: "#320050ac"
+    readonly property color pushBackColor: "#3203a000"
+    readonly property color taxiColor: "#32b18000"
+    readonly property color otherColor: "#32b600c6"
 
     //text colors
     readonly property color whiteTextColor: "#ffffff"

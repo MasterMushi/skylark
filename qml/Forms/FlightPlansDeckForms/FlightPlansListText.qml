@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import StyleConstants 1.0
 import ResourceProvider 1.0
 

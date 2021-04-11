@@ -13,31 +13,12 @@ Page {
     header: AirSituationToolBar { }
 
     Item {
+        anchors.fill: parent
 
-//        FlightPlansDeck {
-//            anchors.fill: parent
-//        }
+        FlightPlansDeck {
+            anchors.fill: parent
 
-//        FlightPlansDeckPinArea {
-//            anchors.left: parent.left
-//            anchors.top: parent.top
-//            height: parent.height
-//        }
-
-        FlightPlansList {
-            x: 100
-            y: 300
-            //backgroundColor: StyleConstants.arrivalListColor
-            model: FlightPlansListModel {}
         }
-
-//        FlightPlansList {
-//            x: 300
-//            y: 400
-//            backgroundColor: StyleConstants.departureListColor
-//            //name: "Departure"
-//            model: FlightPlansListModel {}
-//        }
 
         Image {
             z: -1

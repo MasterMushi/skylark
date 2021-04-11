@@ -14,11 +14,15 @@ ApplicationWindow {
     title: qsTr("SkyLark")
     flags: Qt.Window | Qt.FramelessWindowHint
 
+    minimumWidth: 900
+    minimumHeight: 480
+
     property real previousX
     property real previousY
 
     AppWindowHeader {
         id: _menuBar
+        z: 50
         width: parent.width
         height: 38
         anchors.top: parent.top
@@ -63,33 +67,80 @@ ApplicationWindow {
     }
 
     MouseArea {
+        id: _rightSizeMouseArea
         z: 100
-        width: 5
+        width: 4
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         cursorShape: Qt.SizeHorCursor
+        enabled: root.visibility !== Window.FullScreen
 
         onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
-            root.setWidth(parent.width + dx)
+            if (parent.width > minimumWidth - dx || dx > 0) {
+                root.setWidth(parent.width + dx)
+            }
         }
     }
 
     MouseArea {
+        id: _leftSizeMouseArea
         z: 100
-        height: 5
+        width: 4
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        cursorShape: Qt.SizeHorCursor
+        enabled: root.visibility !== Window.FullScreen
+
+        onPressed: previousX = mouseX
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            if (parent.width > minimumWidth + dx || dx < 0) {
+                root.setX(root.x + dx)
+                root.setWidth(parent.width - dx)
+            }
+        }
+    }
+
+    MouseArea {
+        id: _topSizeMouseArea
+        z: 100
+        height: 4
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
         cursorShape: Qt.SizeVerCursor
+        enabled: root.visibility !== Window.FullScreen
 
         onPressed: previousY = mouseY
-        onMouseXChanged: {
+        onMouseYChanged: {
             var dy = mouseY - previousY
-            root.setY(root.y + dy)
-            root.setHeight(parent.height - dy)
+            if (parent.height > minimumHeight + dy || dy < 0) {
+                root.setY(root.y + dy)
+                root.setHeight(parent.height - dy)
+            }
+        }
+    }
+
+    MouseArea {
+        id: _bottomSizeMouseArea
+        z: 100
+        height: 4
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        cursorShape: Qt.SizeVerCursor
+        enabled: root.visibility !== Window.FullScreen
+
+        onPressed: previousY = mouseY
+        onMouseYChanged: {
+            var dy = - mouseY + previousY
+            if (parent.height > minimumHeight + dy || dy < 0) {
+                root.setHeight(parent.height - dy)
+            }
         }
     }
 

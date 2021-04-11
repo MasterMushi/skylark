@@ -1,11 +1,14 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Forms.CommonForms 1.0
-
+import StyleConstants 1.0
 
 ItemDelegate {
     id: root
+
+    property alias backgroundColor: _background.color
+    property bool pinned: false
 
     implicitWidth: 403
     implicitHeight: 38
@@ -16,7 +19,6 @@ ItemDelegate {
 
         DragIndicator {
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-
         }
 
         FlightPlansListText {
@@ -43,7 +45,8 @@ ItemDelegate {
     }
 
     background: Rectangle {
-        color: "black"
-        opacity: 0.75
+        id: _background
+        color: pinned ? StyleConstants.darkBaseColor : StyleConstants.blackColor
+        opacity: pinned ? 1.0 : 0.75
     }
 }

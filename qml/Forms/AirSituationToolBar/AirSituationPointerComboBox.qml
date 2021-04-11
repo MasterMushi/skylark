@@ -12,7 +12,14 @@ ComboBox {
     width: 72
     height: 40
 
-    Component.onCompleted: { currentIndex = 0 }
+    Component.onCompleted: {
+        currentIndex = 0
+        _model.append({ "text": "Cursor", "img": Resources.icons.pointer });
+        _model.append({ "text": "Text", "img": Resources.icons.text });
+        _model.append({ "text": "Line", "img": Resources.icons.line });
+        _model.append({ "text": "Circle", "img": Resources.icons.circle });
+        _model.append({ "text": "Polygon", "img": Resources.icons.polygon });
+    }
     textRole: "text"
     down: _popup.opened
 
@@ -38,6 +45,8 @@ ComboBox {
         radius: StyleConstants.toolBarFormsRadius
         color: (root.hovered & root.enabled) ? StyleConstants.highlightColor : (root.down ? StyleConstants.darkBaseColor : StyleConstants.buttonBaseColor)
     }
+
+    model: ListModel { id: _model }
 
     delegate: ItemDelegate {
         id: _delegate
@@ -111,7 +120,7 @@ ComboBox {
         contentItem: ListView {
             clip: true
             implicitHeight: contentHeight
-            model: root.delegateModel
+            model: _popup.visible ? delegateModel : null
             currentIndex: root.highlightedIndex
             highlightMoveDuration: 0
             interactive: false

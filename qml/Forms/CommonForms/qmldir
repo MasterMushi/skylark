@@ -1,5 +1,6 @@
 module CommonForms
 
+AddIndicator 1.0 AddIndicator.qml
 DragIndicator 1.0 DragIndicator.qml
 CrossIndicator 1.0 CrossIndicator.qml
 DownArrowIndicator 1.0 DownArrowIndicator.qml

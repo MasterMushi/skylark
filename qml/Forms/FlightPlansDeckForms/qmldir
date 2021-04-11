@@ -1,8 +1,9 @@
 module FlightPlansDeckForms
 
 FlightPlansDeck 1.0 FlightPlansDeck.qml
-FlightPlansList 1.0 FlightPlansList.qml
+
+FlightPlansPlate 1.0 FlightPlansPlate.qml
 FlightPlansDeckPinArea 1.0 FlightPlansDeckPinArea.qml
 
-internal FlightPlansListItemDelegate FlightPlansListItemDelegate.qml
+internal FlightPlansPlateItemDelegate FlightPlansPlateItemDelegate.qml
 internal FlightPlansListText FlightPlansListText.qml
