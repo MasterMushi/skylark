@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Forms.AirSituationToolBar 1.0
-import Forms.FlightPlansDeckForms 1.0
+import Forms.AirSituationDeckForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
 import FlightPlansListModel 1.0
@@ -15,13 +15,12 @@ Page {
     Item {
         anchors.fill: parent
 
-        FlightPlansDeck {
+        AirSituationDeck {
             anchors.fill: parent
-
         }
 
         Image {
-            z: -1
+            z: -100
             anchors.fill: parent
             source: Resources.icons.screenshot
         }

@@ -5,7 +5,6 @@ import ResourceProvider 1.0
 import StyleConstants 1.0
 import Texts 1.0
 import Forms.AbstractForms 1.0
-import LoginViewModel 1.0
 
 AbstractToolBarButton {
     id: root
@@ -14,7 +13,7 @@ AbstractToolBarButton {
     horizontalPadding: 8
     icon.source: Resources.icons.user
 
-    text: LoginViewModel.user
+    text: loginViewModel.user
 
     contentItem: RowLayout {
 

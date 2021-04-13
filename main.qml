@@ -3,7 +3,6 @@ import QtQuick.Controls 2.12
 import QtQuick.Window 2.15
 import Forms.AppWindowHeader 1.0
 import StyleConstants 1.0
-import LoginViewModel 1.0
 import Views 1.0
 
 ApplicationWindow {
@@ -159,12 +158,12 @@ ApplicationWindow {
 
         LoginView {
             id: _loginView
-            onLogin: LoginViewModel.checkLogin(user, pass)
+            onLogin: loginViewModel.checkLogin(user, pass)
             onLoginSuccess: _stack.push(_airViewComponent);
 
-            loginError: LoginViewModel.loginError
-            loginOk: LoginViewModel.loginOk
-            loginInProgress: LoginViewModel.isBusy
+            loginError: loginViewModel.loginError
+            loginOk: loginViewModel.loginOk
+            loginInProgress: loginViewModel.isBusy
         }
     }
     Component {

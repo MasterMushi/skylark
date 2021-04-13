@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     engine.addImportPath(":/qml");
 
     // Here register all c++ models
-    LoginViewModel::registerSingletonMe("LoginViewModel");
+//    LoginViewModel::registerSingletonMe("LoginViewModel");
     FlightPlansListModel::registerMe("FlightPlansListModel");
     //FlightPlansDeckModel::registerMe("FlightPlansDeckModel");
 
@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+
+    LoginViewModel *loginViewModel = new LoginViewModel();
+    engine.rootContext()->setContextProperty("loginViewModel", loginViewModel);
 
     engine.load(url);
 

@@ -8,8 +8,7 @@ import QtQuick.Window 2.12
 
 Control {
     id: root
-    z: 50
-    width: 412
+    implicitWidth: 412
 
     property string title: _content.model.title
     required property color pinnedColor
@@ -18,14 +17,11 @@ Control {
 
     property int pinPosition: -1
     property bool pinned: false
-    property bool unpinning: false
     property bool inPinArea: false
 
-    property real dragMinimumX: -500
-    property real dragMaximumX: parent.width + 500
-
     Drag.active: _dragArea.drag.active
-    Drag.keys: "unpinned"
+    Drag.keys: "plate"
+    Drag.hotSpot.x: ((root.x + width / 2) < root.parent.width / 2) ? 0 : width
 
     horizontalPadding: 4
     bottomPadding: 4
@@ -50,14 +46,18 @@ Control {
                 id: _dragArea
                 anchors.fill: parent
                 drag.target: root
-//                drag.minimumX: root.dragMinimumX
-//                drag.maximumX: root.dragMaximumX - root.width
+                drag.minimumX: ((root.x + width / 2) < root.parent.width / 2) ? 0 : drag.minimumX
+                drag.maximumX: ((root.x + width / 2) < root.parent.width / 2) ? 1920 : root.parent.width - root.width
                 drag.minimumY: root.parent.y
                 drag.maximumY: root.parent.height - root.height
 
                 onReleased: root.Drag.drop()
                 onPositionChanged: {
-                    root.height = root.implicitHeight
+                    if (root.parent !== _airSituationDeck) {
+                        root.x = mapToItem(_airSituationDeck, root.x, root.y).x
+                        root.parent = _airSituationDeck
+                        root.height = root.implicitHeight
+                    }
                 }
             }
 
@@ -101,7 +101,6 @@ Control {
         ListView {
             id: _content
             Layout.fillWidth: true
-            //Layout.fillHeight: true
             implicitHeight: contentHeight
             implicitWidth: contentWidth
             delegate: FlightPlansPlateItemDelegate {
@@ -121,30 +120,13 @@ Control {
         }
     }
 
-//    MouseArea {
-//        z: 100
-//        height: 4
-//        anchors.top: parent.top
-//        anchors.left: parent.left
-//        anchors.right: parent.right
-//        cursorShape: Qt.SizeVerCursor
-
-//        onPressed: previousY = mouseY
-//        onMouseXChanged: {
-//            var dy = mouseY - previousY
-//            if (root.y > 0) {
-//                root.y = root.y + dy
-//                root.height = parent.height - dy
-//            }
-//        }
-//    }
-
     states: [
         State {
             name: "pinned"
             when: root.pinned
             PropertyChanges {
-                target: root; Drag.keys: "pinned"
+                target: root
+
             }
             PropertyChanges {
                 target: _background

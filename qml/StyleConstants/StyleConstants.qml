@@ -29,7 +29,8 @@ QtObject {
     readonly property color departurePinnedColor: "#230050ac"
     readonly property color departureUnpinnedColor: "#320050ac"
     readonly property color pushBackColor: "#3203a000"
-    readonly property color taxiColor: "#32b18000"
+    readonly property color taxiPinnedColor: "#23b18000"
+    readonly property color taxiUnpinnedColor: "#32b18000"
     readonly property color otherColor: "#32b600c6"
 
     //text colors

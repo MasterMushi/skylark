@@ -87,12 +87,12 @@
         <file>qml/Forms/AppWindowHeader/SystemStatusButton.qml</file>
         <file>qml/Forms/AppWindowHeader/TimeLabel.qml</file>
         <file>qml/Forms/AppWindowHeader/UserButton.qml</file>
-        <file>qml/Forms/FlightPlansDeckForms/FlightPlansPlate.qml</file>
-        <file>qml/Forms/FlightPlansDeckForms/FlightPlansDeckPinArea.qml</file>
-        <file>qml/Forms/FlightPlansDeckForms/FlightPlansPlateItemDelegate.qml</file>
-        <file>qml/Forms/FlightPlansDeckForms/FlightPlansListText.qml</file>
-        <file>qml/Forms/FlightPlansDeckForms/qmldir</file>
-        <file>qml/Forms/FlightPlansDeckForms/FlightPlansDeck.qml</file>
         <file>qml/Forms/CommonForms/AddIndicator.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/AirSituationDeck.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/AirSituationDeckPinArea.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/FlightPlansListText.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/FlightPlansPlate.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/FlightPlansPlateItemDelegate.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/qmldir</file>
     </qresource>
 </RCC>
