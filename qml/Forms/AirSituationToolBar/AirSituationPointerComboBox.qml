@@ -1,6 +1,7 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtQml.Models 2.12
 import QtGraphicalEffects 1.12
 import Forms.AbstractForms 1.0
 import ResourceProvider 1.0
@@ -78,13 +79,7 @@ ComboBox {
             implicitHeight: 48
             radius: (index === 0 || index === root.model.count - 1) ? StyleConstants.toolBarPopupRadius : 0
             color: _delegate.highlighted ? StyleConstants.highlightColor : StyleConstants.darkBaseColor
-            layer.enabled: true
-            layer.effect: DropShadow {
-                transparentBorder: true
-                horizontalOffset: 20
-                verticalOffset: 20
-                color: "black"
-            }
+
             Rectangle {
                 visible: index === 0
                 height: parent.radius
@@ -123,6 +118,17 @@ ComboBox {
         palette.base: StyleConstants.darkBaseColor
 
         width: 160
+
+        DropShadow {
+//          z: -1
+          anchors.fill: parent
+          horizontalOffset: 15
+          verticalOffset: 15
+          radius: 8
+          samples: 10
+          source: parent
+          color: "black"
+        }
 
         contentItem: ListView {
             clip: true

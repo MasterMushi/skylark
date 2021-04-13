@@ -126,7 +126,7 @@ Control {
             when: root.pinned
             PropertyChanges {
                 target: root
-
+//                height:
             }
             PropertyChanges {
                 target: _background
