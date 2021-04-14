@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import Forms.AbstractForms 1.0
 import Forms.CommonForms 1.0
 import StyleConstants 1.0
 import Texts 1.0
@@ -47,7 +48,7 @@ Control {
                 anchors.fill: parent
                 drag.target: root
                 drag.minimumX: ((root.x + width / 2) < root.parent.width / 2) ? 0 : drag.minimumX
-                drag.maximumX: ((root.x + width / 2) < root.parent.width / 2) ? 1920 : root.parent.width - root.width
+                drag.maximumX: ((root.x + width / 2) < root.parent.width / 2) ? 3000 : root.parent.width - root.width
                 drag.minimumY: root.parent.y
                 drag.maximumY: root.parent.height - root.height
 
@@ -76,6 +77,8 @@ Control {
                 anchors.right: parent.right
                 anchors.topMargin: parent.height / 2 - height / 2
                 anchors.rightMargin: anchors.topMargin
+
+                onClicked: root.visible = false
             }
 
             AddIndicator {
@@ -85,6 +88,15 @@ Control {
                 anchors.right: parent.right
                 anchors.topMargin: parent.height / 2 - height / 2
                 anchors.rightMargin: anchors.topMargin
+
+                onClicked: _addPlateDialog.open()
+
+                AddPlateDialog {
+                    id: _addPlateDialog
+                    width: 322
+                    height: contentHeight
+                    title: "Open new window"
+                }
             }
         }
 

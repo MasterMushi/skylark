@@ -7,3 +7,4 @@ FlightPlansPlate 1.0 FlightPlansPlate.qml
 
 internal FlightPlansPlateItemDelegate FlightPlansPlateItemDelegate.qml
 internal FlightPlansListText FlightPlansListText.qml
+internal AddPlatePopup AddPlatePopup.qml

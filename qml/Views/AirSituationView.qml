@@ -5,7 +5,6 @@ import Forms.AirSituationToolBar 1.0
 import Forms.AirSituationDeckForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
-import FlightPlansListModel 1.0
 
 Page {
     id: root

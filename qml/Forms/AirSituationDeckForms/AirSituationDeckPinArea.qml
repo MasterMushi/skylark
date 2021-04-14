@@ -16,12 +16,12 @@ Rectangle {
         anchors.fill: parent
 
         keys: ["plate"]
-
         onDropped: {
             var src = drop.source
             src.parent = _column
             src.x = src.parent.x
             src.pinned = true
+
             _column.forceLayout()
         }
     }
@@ -37,6 +37,15 @@ Rectangle {
 
         move: Transition {
             NumberAnimation {properties: "x,y"; duration: 200 }
+        }
+
+        onPositioningComplete: changeChildrenHeight()
+        onHeightChanged: changeChildrenHeight()
+
+        function changeChildrenHeight() {
+            for (var i = 0; i < _column.children.length; i++) {
+                _column.children[i].height = root.height / _column.children.length
+            }
         }
     }
 

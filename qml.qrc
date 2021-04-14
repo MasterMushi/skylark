@@ -94,5 +94,8 @@
         <file>qml/Forms/AirSituationDeckForms/FlightPlansPlate.qml</file>
         <file>qml/Forms/AirSituationDeckForms/FlightPlansPlateItemDelegate.qml</file>
         <file>qml/Forms/AirSituationDeckForms/qmldir</file>
+        <file>qml/Forms/AirSituationDeckForms/AddPlatePopup.qml</file>
+        <file>qml/Forms/AbstractForms/AbstractDialog.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/AddPlateDialog.qml</file>
     </qresource>
 </RCC>

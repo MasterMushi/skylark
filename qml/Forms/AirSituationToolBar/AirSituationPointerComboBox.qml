@@ -119,17 +119,6 @@ ComboBox {
 
         width: 160
 
-        DropShadow {
-//          z: -1
-          anchors.fill: parent
-          horizontalOffset: 15
-          verticalOffset: 15
-          radius: 8
-          samples: 10
-          source: parent
-          color: "black"
-        }
-
         contentItem: ListView {
             clip: true
             implicitHeight: contentHeight

@@ -19,6 +19,13 @@ ItemDelegate {
 
         DragIndicator {
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+
+            MouseArea {
+                id: _dragArea
+                anchors.fill: parent
+                drag.target: root
+
+            }
         }
 
         FlightPlansListText {
