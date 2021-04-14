@@ -1,6 +1,6 @@
-#include "flightPlansListModel.h"
+#include "plateListModel.h"
 
-FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel(parent)
+PlateListModel::PlateListModel(QObject *parent) : QAbstractListModel(parent)
 {
     m_flightPlansData.push_back(QStringList{"FFT2323", "B738 - M", "0000"});
     m_flightPlansData.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
@@ -9,12 +9,12 @@ FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel
     m_flightPlansData.push_back(QStringList{"RPA4543", "A832 - M", "0000"});
 }
 
-void FlightPlansListModel::registerMe(const std::string &moduleName)
+void PlateListModel::registerMe(const std::string &moduleName)
 {
-    qmlRegisterType<FlightPlansListModel>(moduleName.c_str(), 1, 0, "FlightPlansListModel");
+    qmlRegisterType<PlateListModel>(moduleName.c_str(), 1, 0, "FlightPlansListModel");
 }
 
-int FlightPlansListModel::rowCount(const QModelIndex &parent) const
+int PlateListModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;
@@ -23,7 +23,7 @@ int FlightPlansListModel::rowCount(const QModelIndex &parent) const
     return m_flightPlansData.size();
 }
 
-QVariant FlightPlansListModel::data(const QModelIndex &index, int role) const
+QVariant PlateListModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return QVariant();
@@ -41,7 +41,7 @@ QVariant FlightPlansListModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QHash<int, QByteArray> FlightPlansListModel::roleNames() const
+QHash<int, QByteArray> PlateListModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
     roles[Text1Role] = "text1";
@@ -51,27 +51,27 @@ QHash<int, QByteArray> FlightPlansListModel::roleNames() const
     return roles;
 }
 
-QColor FlightPlansListModel::pinnedColor() const
+QColor PlateListModel::pinnedColor() const
 {
     return m_pinnedColor;
 }
 
-QColor FlightPlansListModel::unpinnedColor() const
+QColor PlateListModel::unpinnedColor() const
 {
     return m_unpinnedColor;
 }
 
-QString FlightPlansListModel::title() const
+QString PlateListModel::title() const
 {
     return m_title;
 }
 
-int FlightPlansListModel::position() const
+int PlateListModel::position() const
 {
     return m_position;
 }
 
-void FlightPlansListModel::setPosition(int position)
+void PlateListModel::setPosition(int position)
 {
     if (m_position != position)
     {
@@ -80,12 +80,12 @@ void FlightPlansListModel::setPosition(int position)
     }
 }
 
-int FlightPlansListModel::x() const
+int PlateListModel::x() const
 {
     return m_x;
 }
 
-void FlightPlansListModel::setX(int x)
+void PlateListModel::setX(int x)
 {
     if (m_x != x)
     {
@@ -94,12 +94,12 @@ void FlightPlansListModel::setX(int x)
     }
 }
 
-int FlightPlansListModel::y() const
+int PlateListModel::y() const
 {
     return m_y;
 }
 
-void FlightPlansListModel::setY(int y)
+void PlateListModel::setY(int y)
 {
     if (m_y != y)
     {
@@ -108,12 +108,12 @@ void FlightPlansListModel::setY(int y)
     }
 }
 
-int FlightPlansListModel::width() const
+int PlateListModel::width() const
 {
     return m_width;
 }
 
-void FlightPlansListModel::setWidth(int width)
+void PlateListModel::setWidth(int width)
 {
     if (m_width != width)
     {
@@ -122,12 +122,12 @@ void FlightPlansListModel::setWidth(int width)
     }
 }
 
-int FlightPlansListModel::height() const
+int PlateListModel::height() const
 {
     return m_height;
 }
 
-void FlightPlansListModel::setHeight(int height)
+void PlateListModel::setHeight(int height)
 {
     if (m_height!= height)
     {

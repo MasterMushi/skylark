@@ -7,7 +7,7 @@
 #include <QStringList>
 #include <vector>
 
-class FlightPlansListModel : public QAbstractListModel
+class PlateListModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(QColor pinnedColor READ pinnedColor)
@@ -20,7 +20,7 @@ class FlightPlansListModel : public QAbstractListModel
     Q_PROPERTY(int height READ height NOTIFY heightChanged)
 
 public:
-    explicit FlightPlansListModel(QObject *parent = nullptr);
+    explicit PlateListModel(QObject *parent = nullptr);
 
     static void registerMe(const std::string& moduleName);
 

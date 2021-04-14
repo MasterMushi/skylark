@@ -3,8 +3,8 @@
 #include <QQmlContext>
 
 #include "cpp/loginViewModels/loginViewModel.h"
-#include "cpp/airSituationViewModels/flightPlansListModel.h"
-#include "cpp/airSituationViewModels/flightPlansDeckModel.h"
+#include "cpp/airSituationViewModels/plateListModel.h"
+#include "cpp/airSituationViewModels/platesDeckModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
     // Here register all c++ models
 //    LoginViewModel::registerSingletonMe("LoginViewModel");
-    FlightPlansListModel::registerMe("FlightPlansListModel");
+    PlateListModel::registerMe("FlightPlansListModel");
     //FlightPlansDeckModel::registerMe("FlightPlansDeckModel");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

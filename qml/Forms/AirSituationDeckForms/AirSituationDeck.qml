@@ -39,6 +39,10 @@ Item {
         }
     }
 
+    Component.onCompleted: {
+
+    }
+
     FlightPlansPlate {
         z: 50
         title: "Arrival"

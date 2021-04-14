@@ -15,16 +15,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cpp/airSituationViewModels/PlateListModel.cpp \
+    cpp/airSituationViewModels/PlatesDeckModel.cpp \
     cpp/airSituationViewModels/airSituationViewModel.cpp \
-    cpp/airSituationViewModels/flightPlansDeckModel.cpp \
-    cpp/airSituationViewModels/flightPlansListModel.cpp \
     cpp/loginViewModels/loginViewModel.cpp \
     main.cpp
 
 HEADERS += \
     cpp/airSituationViewModels/airSituationViewModel.h \
-    cpp/airSituationViewModels/flightPlansDeckModel.h \
-    cpp/airSituationViewModels/flightPlansListModel.h \
+    cpp/airSituationViewModels/plateListModel.h \
+    cpp/airSituationViewModels/platesDeckModel.h \
     cpp/loginViewModels/loginViewModel.h \
 
 RESOURCES += qml.qrc
