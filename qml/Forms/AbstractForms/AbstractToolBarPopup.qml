@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-
+import QtGraphicalEffects 1.12
 import Shapes 1.0
 import StyleConstants 1.0
 
@@ -16,7 +16,6 @@ Popup {
     height: topPadding + contentItem.implicitHeight
 
     background: ColumnLayout {
-        anchors.fill: parent
 
         PopupTriangle {
             id: _triangle
@@ -32,7 +31,6 @@ Popup {
             Layout.alignment: Qt.AlignLeft
             color: "transparent"
             radius: StyleConstants.toolBarPopupRadius
-
         }
     }
 }

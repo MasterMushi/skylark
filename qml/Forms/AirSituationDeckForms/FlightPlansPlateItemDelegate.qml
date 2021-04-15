@@ -24,7 +24,6 @@ ItemDelegate {
                 id: _dragArea
                 anchors.fill: parent
                 drag.target: root
-
             }
         }
 

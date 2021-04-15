@@ -16,15 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cpp/airSituationViewModels/airSituationViewModel.cpp \
-    cpp/airSituationViewModels/plateListModel.cpp \
-    cpp/airSituationViewModels/platesDeckModel.cpp \
+    cpp/airSituationViewModels/filterFlightPlansListModel.cpp \
+    cpp/airSituationViewModels/flightPlan.cpp \
+    cpp/airSituationViewModels/flightPlansListModel.cpp \
     cpp/loginViewModels/loginViewModel.cpp \
     main.cpp
 
 HEADERS += \
     cpp/airSituationViewModels/airSituationViewModel.h \
-    cpp/airSituationViewModels/plateListModel.h \
-    cpp/airSituationViewModels/platesDeckModel.h \
+    cpp/airSituationViewModels/filterFlightPlansListModel.h \
+    cpp/airSituationViewModels/flightPlan.h \
+    cpp/airSituationViewModels/flightPlansListModel.h \
     cpp/loginViewModels/loginViewModel.h \
 
 RESOURCES += qml.qrc

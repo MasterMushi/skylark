@@ -3,8 +3,7 @@
 #include <QQmlContext>
 
 #include "cpp/loginViewModels/loginViewModel.h"
-#include "cpp/airSituationViewModels/plateListModel.h"
-#include "cpp/airSituationViewModels/platesDeckModel.h"
+#include "cpp/airSituationViewModels/airSituationViewModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,11 +15,6 @@ int main(int argc, char *argv[])
 
     engine.addImportPath(":/qml");
 
-    // Here register all c++ models
-//    LoginViewModel::registerSingletonMe("LoginViewModel");
-    PlateListModel::registerMe("FlightPlansListModel");
-    //FlightPlansDeckModel::registerMe("FlightPlansDeckModel");
-
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
@@ -28,8 +22,12 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
+    // Here register all c++ models
     LoginViewModel *loginViewModel = new LoginViewModel();
     engine.rootContext()->setContextProperty("loginViewModel", loginViewModel);
+
+    AirSituationViewModel *airSituationViewModel = new AirSituationViewModel();
+    engine.rootContext()->setContextProperty("airSituationViewModel", airSituationViewModel);
 
     engine.load(url);
 

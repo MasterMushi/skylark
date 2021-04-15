@@ -1,14 +1,14 @@
 import QtQuick 2.12
 import QtQml.Models 2.12
 import StyleConstants 1.0
-import FlightPlansListModel 1.0
+//import FlightPlansListModel 1.0
 
 Item {
     id: _airSituationDeck
 
     AirSituationDeckPinArea {
         id: _leftPinArea
-        z: 5
+        z: 1
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -17,7 +17,7 @@ Item {
 
     AirSituationDeckPinArea {
         id: _rightPinArea
-        z: 5
+        z: 1
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -39,34 +39,33 @@ Item {
         }
     }
 
-    Component.onCompleted: {
-
-    }
-
     FlightPlansPlate {
-        z: 50
+        id: _arrival
+        z: Drag.active ? 10 : 5
         title: "Arrival"
-        x: 300; y: 300
         pinnedColor: StyleConstants.arrivalPinnedColor
         unpinnedColor: StyleConstants.arrivalUnpinnedColor
-        model: FlightPlansListModel{}
+        model: airSituationViewModel.arrivalModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 
     FlightPlansPlate {
-        z: 50
+        id: _departure
+        z: Drag.active ? 10 : 5
         title: "Departure"
-        x: 200; y: 200
         pinnedColor: StyleConstants.departurePinnedColor
         unpinnedColor: StyleConstants.departureUnpinnedColor
-        model: FlightPlansListModel{}
+        model: airSituationViewModel.departureModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 
     FlightPlansPlate {
-        z: 50
+        id: _taxi
+        z: Drag.active ? 10 : 5
         title: "Taxi"
-        x: 200; y: 200
         pinnedColor: StyleConstants.taxiPinnedColor
         unpinnedColor: StyleConstants.taxiUnpinnedColor
-        model: FlightPlansListModel{}
+        model: airSituationViewModel.taxiModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 }

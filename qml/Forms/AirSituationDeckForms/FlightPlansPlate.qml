@@ -24,6 +24,7 @@ Control {
     Drag.keys: "plate"
     Drag.hotSpot.x: ((root.x + width / 2) < root.parent.width / 2) ? 0 : width
 
+    z: Drag.active ? 100 : 0
     horizontalPadding: 4
     bottomPadding: 4
     topPadding: 38
@@ -136,10 +137,7 @@ Control {
         State {
             name: "pinned"
             when: root.pinned
-            PropertyChanges {
-                target: root
-//                height:
-            }
+
             PropertyChanges {
                 target: _background
                 radius: 0

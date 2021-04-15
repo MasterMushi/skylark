@@ -16,14 +16,7 @@ Rectangle {
         anchors.fill: parent
 
         keys: ["plate"]
-        onDropped: {
-            var src = drop.source
-            src.parent = _column
-            src.x = src.parent.x
-            src.pinned = true
-
-            _column.forceLayout()
-        }
+        onDropped: pinToArea(drop.source)
     }
 
     Column {
@@ -71,4 +64,12 @@ Rectangle {
             }
         }
     ]
+
+    function pinToArea(src) {
+        src.parent = _column
+        src.x = src.parent.x
+        src.pinned = true
+
+        _column.forceLayout()
+    }
 }
