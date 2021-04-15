@@ -31,23 +31,36 @@ ItemDelegate {
         FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
             Layout.preferredWidth: content.width / 4
-            text: text1
+            text: flight
         }
 
         FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
-            Layout.preferredWidth: content.width / 4
-            text: text2
+            Layout.preferredWidth: width
+            text: aircraft
+        }
+
+        FlightPlansListText {
+            Layout.alignment: Qt.AlignVCenter
+            Layout.preferredWidth: width
+            text: "—"
+        }
+
+        FlightPlansListText {
+            Layout.alignment: Qt.AlignVCenter
+            Layout.preferredWidth: content.width / 8
+            text: letter
         }
 
         FlightPlansListText {
             Layout.alignment: Qt.AlignVCenter
             Layout.fillWidth: true
-            text: text3
+            text: number
         }
 
         DownArrowIndicator {
             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            Layout.preferredWidth: width
         }
     }
 

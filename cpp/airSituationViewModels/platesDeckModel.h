@@ -8,7 +8,7 @@
 class PlatesDeckModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(std::vector<PlateListModel> plates READ plates NOTIFY platesChanged)
+//    Q_PROPERTY(std::vector<PlateListModel> plates READ plates NOTIFY platesChanged)
 
 public:
     explicit PlatesDeckModel(QObject *parent = nullptr);
