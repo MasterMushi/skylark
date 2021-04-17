@@ -39,8 +39,9 @@ Item {
         }
     }
 
+    /************** Plates **************/
     FlightPlansPlate {
-        id: _arrival
+        id: _arrivalPlate
         z: Drag.active ? 10 : 5
         title: "Arrival"
         pinnedColor: StyleConstants.arrivalPinnedColor
@@ -50,7 +51,37 @@ Item {
     }
 
     FlightPlansPlate {
-        id: _departure
+        id: _flightPlansPlate
+        z: Drag.active ? 10 : 5
+        title: "Flight Plans"
+        pinnedColor: StyleConstants.flightPlansPinnedColor
+        unpinnedColor: StyleConstants.flightPlansUnpinnedColor
+        model: airSituationViewModel.flightPlansModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+    FlightPlansPlate {
+        id: _runwaysPlate
+        z: Drag.active ? 10 : 5
+        title: "Runways"
+        pinnedColor: StyleConstants.runwaysPinnedColor
+        unpinnedColor: StyleConstants.runwaysUnpinnedColor
+        model: airSituationViewModel.runwaysModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+    FlightPlansPlate {
+        id: _weatherPlate
+        z: Drag.active ? 10 : 5
+        title: "Weather"
+        pinnedColor: StyleConstants.weatherPinnedColor
+        unpinnedColor: StyleConstants.weatherUnpinnedColor
+        model: airSituationViewModel.weatherModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+    FlightPlansPlate {
+        id: _departurePlate
         z: Drag.active ? 10 : 5
         title: "Departure"
         pinnedColor: StyleConstants.departurePinnedColor
@@ -60,12 +91,40 @@ Item {
     }
 
     FlightPlansPlate {
-        id: _taxi
+        id: _pushBackPlate
+        z: Drag.active ? 10 : 5
+        title: "Push Back"
+        pinnedColor: StyleConstants.pushBackPinnedColor
+        unpinnedColor: StyleConstants.pushBackUnpinnedColor
+        model: airSituationViewModel.pushBackModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+    FlightPlansPlate {
+        id: _taxiPlate
         z: Drag.active ? 10 : 5
         title: "Taxi"
         pinnedColor: StyleConstants.taxiPinnedColor
         unpinnedColor: StyleConstants.taxiUnpinnedColor
         model: airSituationViewModel.taxiModel
         Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+    FlightPlansPlate {
+        id: _otherPlate
+        z: Drag.active ? 10 : 5
+        title: "Other"
+        pinnedColor: StyleConstants.otherPinnedColor
+        unpinnedColor: StyleConstants.otherUnpinnedColor
+        model: airSituationViewModel.otherModel
+        Component.onCompleted: _rightPinArea.pinToArea(this)
+    }
+
+
+    /************** Dialogs **************/
+    AddPlateDialog {
+        id: _addPlateDialog
+        x: (parent.width - width) / 2
+        y: (parent.height - height) / 2
     }
 }

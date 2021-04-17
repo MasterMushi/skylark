@@ -8,15 +8,16 @@ import StyleConstants 1.0
 Popup {
     id: root
 
-    topInset: 0
-    horizontalPadding: 0
+    horizontalPadding: 20
     topPadding: _triangle.height
-    bottomPadding: 0
+    bottomPadding: 10
+    topInset: 0
 
-    height: topPadding + contentItem.implicitHeight
+    height: topPadding + contentItem.implicitHeight + bottomPadding
 
     background: ColumnLayout {
 
+        id: _background
         PopupTriangle {
             id: _triangle
             Layout.alignment: Qt.AlignLeft
@@ -31,6 +32,19 @@ Popup {
             Layout.alignment: Qt.AlignLeft
             color: "transparent"
             radius: StyleConstants.toolBarPopupRadius
+            clip: true
+
+            RadialGradient {
+                anchors.fill: parent
+                horizontalRadius: parent.width * 5 / 7
+                verticalRadius: parent.height * 7 / 9
+                gradient: Gradient {
+                    GradientStop { position: 0.8; color: "transparent"}
+                    GradientStop { position: 0.0; color: "#35000000"}
+                }
+            }
+
+
         }
     }
 }

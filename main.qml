@@ -6,7 +6,7 @@ import StyleConstants 1.0
 import Views 1.0
 
 ApplicationWindow {
-    id: root
+    id: appWindow
     visible: true
     width: 1024
     height: 680
@@ -28,18 +28,18 @@ ApplicationWindow {
 
         onSlCloseClicked: Qt.quit()
         onSlMaximizeClicked: {
-            if (root.visibility === Window.FullScreen)
-                root.showNormal()
+            if (appWindow.visibility === Window.FullScreen)
+                appWindow.showNormal()
             else
-                root.showFullScreen()
+                appWindow.showFullScreen()
         }
-        onSlMinimizeClicked: root.showMinimized()
+        onSlMinimizeClicked: appWindow.showMinimized()
 
         MouseArea {
             anchors.fill: parent
 
             onDoubleClicked: {
-                root.visibility === Window.FullScreen ? root.showNormal() : root.showFullScreen()
+                appWindow.visibility === Window.FullScreen ? appWindow.showNormal() : appWindow.showFullScreen()
             }
 
             onPressed: {
@@ -48,18 +48,18 @@ ApplicationWindow {
             }
 
             onMouseXChanged: {
-                if (root.visibility !== Window.FullScreen)
+                if (appWindow.visibility !== Window.FullScreen)
                 {
                     var dx = mouseX - previousX
-                    root.setX(root.x + dx)
+                    appWindow.setX(appWindow.x + dx)
                 }
             }
 
             onMouseYChanged: {
-                if (root.visibility !== Window.FullScreen)
+                if (appWindow.visibility !== Window.FullScreen)
                 {
                     var dy = mouseY - previousY
-                    root.setY(root.y + dy)
+                    appWindow.setY(appWindow.y + dy)
                 }
             }
         }
@@ -73,13 +73,13 @@ ApplicationWindow {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         cursorShape: Qt.SizeHorCursor
-        enabled: root.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.FullScreen
 
         onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if (parent.width > minimumWidth - dx || dx > 0) {
-                root.setWidth(parent.width + dx)
+                appWindow.setWidth(parent.width + dx)
             }
         }
     }
@@ -92,14 +92,14 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         cursorShape: Qt.SizeHorCursor
-        enabled: root.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.FullScreen
 
         onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if (parent.width > minimumWidth + dx || dx < 0) {
-                root.setX(root.x + dx)
-                root.setWidth(parent.width - dx)
+                appWindow.setX(appWindow.x + dx)
+                appWindow.setWidth(parent.width - dx)
             }
         }
     }
@@ -112,14 +112,14 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.right: parent.right
         cursorShape: Qt.SizeVerCursor
-        enabled: root.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.FullScreen
 
         onPressed: previousY = mouseY
         onMouseYChanged: {
             var dy = mouseY - previousY
             if (parent.height > minimumHeight + dy || dy < 0) {
-                root.setY(root.y + dy)
-                root.setHeight(parent.height - dy)
+                appWindow.setY(appWindow.y + dy)
+                appWindow.setHeight(parent.height - dy)
             }
         }
     }
@@ -132,13 +132,13 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.right: parent.right
         cursorShape: Qt.SizeVerCursor
-        enabled: root.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.FullScreen
 
         onPressed: previousY = mouseY
         onMouseYChanged: {
             var dy = - mouseY + previousY
             if (parent.height > minimumHeight + dy || dy < 0) {
-                root.setHeight(parent.height - dy)
+                appWindow.setHeight(parent.height - dy)
             }
         }
     }

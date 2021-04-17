@@ -50,9 +50,13 @@ ComboBox {
 
     model: ListModel { id: _model }
 
-    delegate: ItemDelegate {
+    delegate: AbstractListViewDelegate {
         id: _delegate
 
+        width: _popup.width - _popup.horizontalPadding * 2
+
+        modelCount: root.model.count
+        highlighted: highlightedIndex === index
         contentItem: RowLayout {
             spacing: 14.93
 
@@ -69,37 +73,6 @@ ComboBox {
                 text: root.textRole ? (Array.isArray(root.model) ? modelData[root.textRole] : model[root.textRole]) : modelData
                 color: _delegate.highlighted ? StyleConstants.whiteTextColor : StyleConstants.greyTextColor
                 elide: Text.ElideRight
-            }
-        }
-
-        highlighted: highlightedIndex === index
-
-        background: Rectangle {
-            implicitWidth: popup.width
-            implicitHeight: 48
-            radius: (index === 0 || index === root.model.count - 1) ? StyleConstants.toolBarPopupRadius : 0
-            color: _delegate.highlighted ? StyleConstants.highlightColor : StyleConstants.darkBaseColor
-
-            Rectangle {
-                visible: index === 0
-                height: parent.radius
-                anchors {
-                    bottom: parent.bottom
-                    left: parent.left
-                    right: parent.right
-                }
-                color: parent.color
-            }
-
-            Rectangle {
-                visible: index === root.model.count - 1
-                height: parent.radius
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    right: parent.right
-                }
-                color: parent.color
             }
         }
     }

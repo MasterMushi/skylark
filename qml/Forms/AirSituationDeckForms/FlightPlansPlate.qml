@@ -47,6 +47,7 @@ Control {
             MouseArea {
                 id: _dragArea
                 anchors.fill: parent
+
                 drag.target: root
                 drag.minimumX: ((root.x + width / 2) < root.parent.width / 2) ? 0 : drag.minimumX
                 drag.maximumX: ((root.x + width / 2) < root.parent.width / 2) ? 3000 : root.parent.width - root.width
@@ -54,7 +55,9 @@ Control {
                 drag.maximumY: root.parent.height - root.height
 
                 onReleased: root.Drag.drop()
-                onPositionChanged: {
+                onPositionChanged: unpin()
+
+                function unpin() {
                     if (root.parent !== _airSituationDeck) {
                         root.x = mapToItem(_airSituationDeck, root.x, root.y).x
                         root.parent = _airSituationDeck
@@ -91,19 +94,12 @@ Control {
                 anchors.rightMargin: anchors.topMargin
 
                 onClicked: _addPlateDialog.open()
-
-                AddPlateDialog {
-                    id: _addPlateDialog
-                    width: 322
-                    height: contentHeight
-                    title: "Open new window"
-                }
             }
         }
 
         Rectangle {
-            z: -5
             id: _substr
+            z: -5
             anchors.fill: parent
             color: "transparent"
         }
@@ -111,6 +107,7 @@ Control {
 
     contentItem: ColumnLayout {
         spacing: 1
+
         ListView {
             id: _content
             Layout.fillWidth: true

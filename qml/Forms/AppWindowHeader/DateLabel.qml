@@ -7,29 +7,12 @@ import Managers 1.0
 AbstractButton {
     id: root
 
-    contentItem:
-        CustomMenuText {
+    contentItem: CustomMenuText {
             id: _text
 
             property var locale: Qt.locale()
 
             text: GeneralTimeManager.currentDate.toLocaleString(locale, "yyyy  /  MM  /  dd")
             color: StyleConstants.greyTextColor
-        }
-
-    ToolTip {
-        id: _tooltip
-        parent: root
-        visible: root.hovered
-        text: "tool tip"
-
-        background: Item {
-
-            Rectangle {
-                radius: StyleConstants.toolBarPopupRadius
-            }
-
-        }
     }
-
 }

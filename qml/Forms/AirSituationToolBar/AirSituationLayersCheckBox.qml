@@ -1,10 +1,12 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtQml.Models 2.12
 import Forms.AbstractForms 1.0
 import ResourceProvider 1.0
 import StyleConstants 1.0
 import Texts 1.0
+import QtGraphicalEffects 1.12
 
 AirSituationPointerComboBox {
     id: root
@@ -31,16 +33,18 @@ AirSituationPointerComboBox {
         }
     }
 
-    delegate: ItemDelegate {
+    delegate: AbstractListViewDelegate {
         id: _delegate
 
+        width: _popup.width - _popup.horizontalPadding * 2
+
+        modelCount: root.model.count
         contentItem: RowLayout {
             spacing: 14.93
 
             Image {
                 Layout.alignment: Qt.AlignVCenter
                 source: check ? Resources.icons.checkboxCheck : Resources.icons.checkboxEmpty
-                smooth: true
                 opacity: _delegate.highlighted ? 1 : 0.7
             }
 
@@ -54,41 +58,11 @@ AirSituationPointerComboBox {
         }
 
         onClicked: check = !check
-
-        highlighted: highlightedIndex === index
-
-        background: Rectangle {
-            implicitWidth: popup.width
-            implicitHeight: 48
-            radius: (index === 0 || index === root.model.count - 1) ? StyleConstants.toolBarPopupRadius : 0
-            color: _delegate.highlighted ? StyleConstants.highlightColor : StyleConstants.darkBaseColor
-
-            Rectangle {
-                visible: index === 0
-                height: parent.radius
-                anchors {
-                    bottom: parent.bottom
-                    left: parent.left
-                    right: parent.right
-                }
-                color: parent.color
-            }
-
-            Rectangle {
-                visible: index === root.model.count - 1
-                height: parent.radius
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    right: parent.right
-                }
-                color: parent.color
-            }
-        }
     }
 
     popup {
-        width: 245
+        id: _popup
+        width: 255
 
     }
 }
