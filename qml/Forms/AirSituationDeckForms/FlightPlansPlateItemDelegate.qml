@@ -13,11 +13,9 @@ ItemDelegate {
     implicitWidth: 403
     implicitHeight: 38
 
-    Drag.active: _dragArea.drag.active
-    Drag.keys: "strip"
-    Drag.hotSpot.x: ((root.x + width / 2) < root.parent.width / 2) ? 0 : width
-    Drag.dragType: Drag.Automatic
-    Drag.mimeData: ["", ""]
+    Drag.dragType: Drag.None
+    Drag.mimeData: { "text/plain": flight, "strip": "" }
+//    Drag.keys: "strip"
 
     contentItem: RowLayout {
         id: content
@@ -30,10 +28,15 @@ ItemDelegate {
                 id: _dragArea
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
+
                 drag.target: root
-                onPressed: root.grabToImage(function(result) {
-                    root.Drag.imageSource = result.url
-                })
+                onPressed: {
+                    drag.target.Drag.active = true
+                    drag.target.Drag.startDrag(drag.target.Drag.supportedActions)
+                    drag.target.grabToImage(function(result) {
+                        drag.target.Drag.imageSource = result.url
+                    })
+                }
             }
         }
 

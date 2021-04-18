@@ -28,10 +28,10 @@ ApplicationWindow {
 
         onSlCloseClicked: Qt.quit()
         onSlMaximizeClicked: {
-            if (appWindow.visibility === Window.FullScreen)
+            if (appWindow.visibility === Window.Maximized)
                 appWindow.showNormal()
             else
-                appWindow.showFullScreen()
+                appWindow.showMaximized()
         }
         onSlMinimizeClicked: appWindow.showMinimized()
 
@@ -39,7 +39,7 @@ ApplicationWindow {
             anchors.fill: parent
 
             onDoubleClicked: {
-                appWindow.visibility === Window.FullScreen ? appWindow.showNormal() : appWindow.showFullScreen()
+                appWindow.visibility === Window.Maximized ? appWindow.showNormal() : appWindow.showMaximized()
             }
 
             onPressed: {
@@ -48,7 +48,7 @@ ApplicationWindow {
             }
 
             onMouseXChanged: {
-                if (appWindow.visibility !== Window.FullScreen)
+                if (appWindow.visibility !== Window.Maximized)
                 {
                     var dx = mouseX - previousX
                     appWindow.setX(appWindow.x + dx)
@@ -56,7 +56,7 @@ ApplicationWindow {
             }
 
             onMouseYChanged: {
-                if (appWindow.visibility !== Window.FullScreen)
+                if (appWindow.visibility !== Window.Maximized)
                 {
                     var dy = mouseY - previousY
                     appWindow.setY(appWindow.y + dy)
@@ -73,7 +73,7 @@ ApplicationWindow {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         cursorShape: Qt.SizeHorCursor
-        enabled: appWindow.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.Maximized
 
         onPressed: previousX = mouseX
         onMouseXChanged: {
@@ -92,7 +92,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         cursorShape: Qt.SizeHorCursor
-        enabled: appWindow.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.Maximized
 
         onPressed: previousX = mouseX
         onMouseXChanged: {
@@ -112,7 +112,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.right: parent.right
         cursorShape: Qt.SizeVerCursor
-        enabled: appWindow.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.Maximized
 
         onPressed: previousY = mouseY
         onMouseYChanged: {
@@ -132,7 +132,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.right: parent.right
         cursorShape: Qt.SizeVerCursor
-        enabled: appWindow.visibility !== Window.FullScreen
+        enabled: appWindow.visibility !== Window.Maximized
 
         onPressed: previousY = mouseY
         onMouseYChanged: {

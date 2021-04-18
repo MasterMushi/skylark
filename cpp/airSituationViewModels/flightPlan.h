@@ -4,6 +4,7 @@
 
 class FlightPlan
 {
+
 public:
     enum Filter {
         Arrival,
@@ -17,7 +18,9 @@ public:
     };
 
     FlightPlan() = default;
-    FlightPlan(const QString& flight, const QString& aircraft, const QString& letter, const QString& number, const Filter filter);
+    FlightPlan(const QString &flight, const QString &aircraft, const QString &letter, const QString &number, const Filter filter);
+
+    bool operator==(const FlightPlan &fp);
 
     QString flight() const;
     QString aircraft() const;
@@ -25,7 +28,7 @@ public:
     QString number() const;
     Filter filter() const;
 
-    void setFilter(Filter f);
+    void setFilter(const Filter f);
 
 private:
     QString m_flight;

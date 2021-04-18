@@ -28,7 +28,6 @@ Control {
     horizontalPadding: 4
     bottomPadding: 4
     topPadding: 38
-    clip: true
 
     palette.highlight: StyleConstants.highlightColor
     background: Rectangle {
@@ -48,6 +47,8 @@ Control {
                 id: _dragArea
                 anchors.fill: parent
 
+                cursorShape: Qt.PointingHandCursor
+
                 drag.target: root
                 drag.minimumX: ((root.x + width / 2) < root.parent.width / 2) ? 0 : drag.minimumX
                 drag.maximumX: ((root.x + width / 2) < root.parent.width / 2) ? 3000 : root.parent.width - root.width
@@ -61,7 +62,7 @@ Control {
                     if (root.parent !== _airSituationDeck) {
                         root.x = mapToItem(_airSituationDeck, root.x, root.y).x
                         root.parent = _airSituationDeck
-                        root.height = root.implicitHeight
+                        root.height = Math.min(root.implicitHeight, 200)
                     }
                 }
             }
@@ -106,27 +107,45 @@ Control {
     }
 
     contentItem: ColumnLayout {
+        id: _contentLayout
         spacing: 1
+        clip: true
 
         ListView {
             id: _content
             Layout.fillWidth: true
-            implicitHeight: contentHeight
-            implicitWidth: contentWidth
-            delegate: FlightPlansPlateItemDelegate {
-                id: _delegate
-                pinned: root.pinned
-            }
+            Layout.minimumHeight: Math.min(parent.height, contentHeight)
+
             spacing: 1
             interactive: true
             clip: true
+            delegate: FlightPlansPlateItemDelegate {
+                id: _delegate
+                pinned: root.pinned
+                x: parent.x
+            }
+
+            displaced: Transition {
+                NumberAnimation { properties: "x,y"; duration: 200 }
+            }
         }
 
         Rectangle {
             id: _downGround
-            Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.fillHeight: true
+
             color: "transparent"
+        }
+    }
+
+    DropArea {
+        id: _stripDropArea
+        anchors.fill: parent
+        keys: "strip"
+        onDropped: {
+            if (drop.text !== title)
+                airSituationViewModel.changeFilter(drop.text, title);
         }
     }
 

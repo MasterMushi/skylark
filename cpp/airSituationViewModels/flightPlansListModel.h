@@ -18,6 +18,8 @@ public:
     virtual QVariant data(const QModelIndex &index, int role) const;
     virtual QHash<int, QByteArray> roleNames() const;
 
+    Q_INVOKABLE int changeFilter(const QString &flight, const FlightPlan::Filter newFilter);
+
     enum Roles {
         FilterRole = Qt::UserRole + 1,
         FlightRole,

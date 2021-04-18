@@ -1,5 +1,5 @@
 #include "flightPlan.h"
-
+#include <QDebug>
 FlightPlan::FlightPlan(const QString &flight, const QString &aircraft, const QString &letter, const QString &number, const FlightPlan::Filter filter)
     : m_flight { std::move(flight) },
       m_aircraft { std::move(aircraft) },
@@ -7,6 +7,11 @@ FlightPlan::FlightPlan(const QString &flight, const QString &aircraft, const QSt
       m_number { std::move(number) },
       m_filter { std::move(filter) }
 {
+}
+
+bool FlightPlan::operator==(const FlightPlan &fp)
+{
+    return this->flight() == fp.flight();
 }
 
 QString FlightPlan::flight() const
@@ -34,7 +39,7 @@ FlightPlan::Filter FlightPlan::filter() const
     return m_filter;
 }
 
-void FlightPlan::setFilter(FlightPlan::Filter f)
+void FlightPlan::setFilter(const Filter f)
 {
     m_filter = f;
 }
