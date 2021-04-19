@@ -36,11 +36,11 @@ Popup {
 
             RadialGradient {
                 anchors.fill: parent
-                horizontalRadius: parent.width * 5 / 7
+                horizontalRadius: parent.width * 8 / 9
                 verticalRadius: parent.height * 7 / 9
                 gradient: Gradient {
-                    GradientStop { position: 0.8; color: "transparent"}
-                    GradientStop { position: 0.0; color: "#35000000"}
+                    GradientStop { position: 1; color: "transparent"}
+                    GradientStop { position: 0.0; color: "#45000000"}
                 }
             }
 

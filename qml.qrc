@@ -92,7 +92,7 @@
         <file>qml/Forms/AirSituationDeckForms/AirSituationDeckPinArea.qml</file>
         <file>qml/Forms/AirSituationDeckForms/FlightPlansListText.qml</file>
         <file>qml/Forms/AirSituationDeckForms/FlightPlansPlate.qml</file>
-        <file>qml/Forms/AirSituationDeckForms/FlightPlansPlateItemDelegate.qml</file>
+        <file>qml/Forms/AirSituationDeckForms/FlightPlansStrip.qml</file>
         <file>qml/Forms/AirSituationDeckForms/qmldir</file>
         <file>qml/Forms/AbstractForms/AbstractDialog.qml</file>
         <file>qml/Forms/AirSituationDeckForms/AddPlateDialog.qml</file>

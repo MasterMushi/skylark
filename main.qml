@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
-import QtQuick.Window 2.15
+import QtQuick.Window 2.12
 import Forms.AppWindowHeader 1.0
 import StyleConstants 1.0
 import Views 1.0

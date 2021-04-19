@@ -30,16 +30,16 @@ FlightPlansListModel *AirSituationViewModel::fplmodel()
 int AirSituationViewModel::changeFilter(const QString &flight, const QString &newFilterString)
 {
     FlightPlan::Filter newFilter;
-    qDebug() << flight << newFilterString;
-    if (newFilterString == "Arrival") newFilter = FlightPlan::Filter::Arrival;
-    else if (newFilterString == "Flight Plans") newFilter = FlightPlan::Filter::FlightPlans;
-    else if (newFilterString == "Runways") newFilter = FlightPlan::Filter::Runways;
-    else if (newFilterString == "Weather") newFilter = FlightPlan::Filter::Weather;
-    else if (newFilterString == "Departure") newFilter = FlightPlan::Filter::Departure;
-    else if (newFilterString == "Push Back") newFilter = FlightPlan::Filter::PushBack;
-    else if (newFilterString == "Taxi") newFilter = FlightPlan::Filter::Taxi;
-    else if (newFilterString == "Other") newFilter = FlightPlan::Filter::Other;
-    else return -1;
+
+    if (newFilterString == "Arrival") newFilter = FlightPlan::Arrival;
+    else if (newFilterString == "Flight Plans") newFilter = FlightPlan::FlightPlans;
+    else if (newFilterString == "Runways") newFilter = FlightPlan::Runways;
+    else if (newFilterString == "Weather") newFilter = FlightPlan::Weather;
+    else if (newFilterString == "Departure") newFilter = FlightPlan::Departure;
+    else if (newFilterString == "Push Back") newFilter = FlightPlan::PushBack;
+    else if (newFilterString == "Taxi") newFilter = FlightPlan::Taxi;
+    else if (newFilterString == "Other") newFilter = FlightPlan::Other;
+    else return 0;
 
     return m_fplmodel->changeFilter(flight, newFilter);
 }

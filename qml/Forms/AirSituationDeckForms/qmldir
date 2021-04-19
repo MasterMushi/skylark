@@ -5,6 +5,6 @@ AirSituationDeck 1.0 AirSituationDeck.qml
 AirSituationDeckPinArea 1.0 AirSituationDeckPinArea.qml
 FlightPlansPlate 1.0 FlightPlansPlate.qml
 
-internal FlightPlansPlateItemDelegate FlightPlansPlateItemDelegate.qml
+internal FlightPlansStrip FlightPlansStrip.qml
 internal FlightPlansListText FlightPlansListText.qml
 internal AddPlatePopup AddPlatePopup.qml

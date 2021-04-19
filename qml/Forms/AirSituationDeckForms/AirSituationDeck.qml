@@ -1,10 +1,17 @@
 import QtQuick 2.12
 import QtQml.Models 2.12
 import StyleConstants 1.0
-//import FlightPlansListModel 1.0
 
 Item {
     id: _airSituationDeck
+
+    signal flightdataToolBarButtonClicked()
+    onFlightdataToolBarButtonClicked: {
+        if (!_arrivalPlate.visible) {
+            _arrivalPlate.visible = true
+            _rightPinArea.pinToArea(_arrivalPlate)
+        }
+    }
 
     AirSituationDeckPinArea {
         id: _leftPinArea
@@ -77,7 +84,8 @@ Item {
         pinnedColor: StyleConstants.weatherPinnedColor
         unpinnedColor: StyleConstants.weatherUnpinnedColor
         model: airSituationViewModel.weatherModel
-        Component.onCompleted: _rightPinArea.pinToArea(this)
+        visible: false
+//        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 
     FlightPlansPlate {
@@ -97,7 +105,8 @@ Item {
         pinnedColor: StyleConstants.pushBackPinnedColor
         unpinnedColor: StyleConstants.pushBackUnpinnedColor
         model: airSituationViewModel.pushBackModel
-        Component.onCompleted: _rightPinArea.pinToArea(this)
+        visible: false
+//        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 
     FlightPlansPlate {
@@ -117,7 +126,8 @@ Item {
         pinnedColor: StyleConstants.otherPinnedColor
         unpinnedColor: StyleConstants.otherUnpinnedColor
         model: airSituationViewModel.otherModel
-        Component.onCompleted: _rightPinArea.pinToArea(this)
+        visible: false
+//        Component.onCompleted: _rightPinArea.pinToArea(this)
     }
 
 

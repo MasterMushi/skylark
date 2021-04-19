@@ -1,11 +1,21 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtQml.Models 2.12
 import ResourceProvider 1.0
 import StyleConstants 1.0
 
 ToolBar {
     id: root
+
+    signal flightdataToolBarButtonClicked()
+    signal runwayToolBarButtonClicked()
+    signal fplToolBarButtonClicked()
+    signal weatherToolBarButtonClicked()
+    signal gridToolBarButtonClicked()
+    signal searchToolBarButtonClicked()
+    signal settingsToolBarButtonClicked()
+    signal helpToolBarButtonClicked()
 
     height: 48
     palette.base: StyleConstants.lightBaseColor
@@ -58,41 +68,49 @@ ToolBar {
         AirSituationToolBarIconButton {
             id: _flightdataToolBarButton
             icon.source: Resources.icons.flightdata
+            onClicked: { flightdataToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _runwayToolBarButton
             icon.source: Resources.icons.runway
+            onClicked: { runwayToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _fplToolBarButton
             icon.source: Resources.icons.fpl
+            onClicked: { fplToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _weatherToolBarButton
             icon.source: Resources.icons.weather
+            onClicked: { weatherToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _gridToolBarButton
             icon.source: Resources.icons.grid
+            onClicked: { gridToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _searchToolBarButton
             icon.source: Resources.icons.search
+            onClicked: { searchToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _settingsToolBarButton
             icon.source: Resources.icons.settings
+            onClicked: { settingsToolBarButtonClicked() }
         }
 
         AirSituationToolBarIconButton {
             id: _helpToolBarButton
             icon.source: Resources.icons.help
+            onClicked: { helpToolBarButtonClicked() }
         }
     }
 }

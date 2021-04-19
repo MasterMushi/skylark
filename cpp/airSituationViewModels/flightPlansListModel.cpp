@@ -2,6 +2,7 @@
 
 FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel(parent)
 {
+    // mock data
     m_flightPlansData.push_back(FlightPlan("FFT2321", "B738", "M", "0000", FlightPlan::Arrival));
     m_flightPlansData.push_back(FlightPlan("RPA4542", "B738", "M", "0000", FlightPlan::Arrival));
     m_flightPlansData.push_back(FlightPlan("DAL2353", "A832", "M", "0000", FlightPlan::Departure));
@@ -21,9 +22,9 @@ FlightPlansListModel::FlightPlansListModel(QObject *parent) : QAbstractListModel
     m_flightPlansData.push_back(FlightPlan("DAL2517", "B738", "M", "0000", FlightPlan::FlightPlans));
     m_flightPlansData.push_back(FlightPlan("RPA4418", "B738", "M", "0000", FlightPlan::FlightPlans));
     m_flightPlansData.push_back(FlightPlan("RPA4418", "B738", "M", "0000", FlightPlan::FlightPlans));
-    m_flightPlansData.push_back(FlightPlan("RPA4418", "B738", "M", "0000", FlightPlan::FlightPlans));
-    m_flightPlansData.push_back(FlightPlan("RPA4418", "B738", "M", "0000", FlightPlan::FlightPlans));
-    m_flightPlansData.push_back(FlightPlan("FFT2219", "A832", "M", "0000", FlightPlan::Runways));
+    m_flightPlansData.push_back(FlightPlan("RPA4430", "B738", "M", "0000", FlightPlan::FlightPlans));
+    m_flightPlansData.push_back(FlightPlan("RPA4433", "B738", "M", "0000", FlightPlan::FlightPlans));
+    m_flightPlansData.push_back(FlightPlan("FFT2255", "A832", "M", "0000", FlightPlan::Runways));
     m_flightPlansData.push_back(FlightPlan("RPA4420", "B738", "M", "0000", FlightPlan::Runways));
     m_flightPlansData.push_back(FlightPlan("RPA4421", "B738", "M", "0000", FlightPlan::Runways));
     m_flightPlansData.push_back(FlightPlan("FFT2222", "A832", "M", "0000", FlightPlan::Runways));
@@ -82,13 +83,12 @@ int FlightPlansListModel::changeFilter(const QString &flight, const FlightPlan::
     for (uint i = 0; i < m_flightPlansData.size(); i++)
     {
         auto fp = &m_flightPlansData.at(i);
-        if (fp->flight() == flight)// && fp->filter() != newFilter)
+        if (fp->flight() == flight && fp->filter() != newFilter)
         {
             fp->setFilter(newFilter);
 
             QModelIndex index = createIndex(i, 0, static_cast<void *>(0));
             emit dataChanged(index, index);
-            qDebug() << "changed!";
             return 0;
         }
     }

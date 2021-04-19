@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cpp/airSituationViewModels/airSituationToolBar.cpp \
     cpp/airSituationViewModels/airSituationViewModel.cpp \
     cpp/airSituationViewModels/filterFlightPlansListModel.cpp \
     cpp/airSituationViewModels/flightPlan.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
+    cpp/airSituationViewModels/airSituationToolBar.h \
     cpp/airSituationViewModels/airSituationViewModel.h \
     cpp/airSituationViewModels/filterFlightPlansListModel.h \
     cpp/airSituationViewModels/flightPlan.h \

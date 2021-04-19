@@ -20,7 +20,6 @@ Rectangle {
         onDropped: pinToArea(drop.source)
         onEntered: lastDragSource = drag.source
         onContainsDragChanged: lastDragSource.inPinArea = containsDrag
-
     }
 
     Column {
@@ -56,15 +55,6 @@ Rectangle {
                 width: _column.children[0].width
             }
         }
-
-//        State {
-//            name: "containsDrag"
-//            when: _dropArea.containsDrag
-//            PropertyChanges {
-//                target: _dropArea.drag.source; inPinArea: true
-//            }
-
-//        }
     ]
 
     function pinToArea(src) {

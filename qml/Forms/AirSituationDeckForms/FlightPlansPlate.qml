@@ -10,10 +10,11 @@ import QtQuick.Window 2.12
 Control {
     id: root
     implicitWidth: 412
+    implicitHeight: 200
 
     property string title: _content.model.title
-    required property color pinnedColor
-    required property color unpinnedColor
+    property color pinnedColor
+    property color unpinnedColor
     property alias model: _content.model
 
     property int pinPosition: -1
@@ -23,13 +24,13 @@ Control {
     Drag.active: _dragArea.drag.active
     Drag.keys: "plate"
     Drag.hotSpot.x: ((root.x + width / 2) < root.parent.width / 2) ? 0 : width
+    Drag.hotSpot.y: 0
 
     z: Drag.active ? 100 : 0
     horizontalPadding: 4
     bottomPadding: 4
     topPadding: 38
 
-    palette.highlight: StyleConstants.highlightColor
     background: Rectangle {
         id: _background
         radius: StyleConstants.toolBarPopupRadius
@@ -119,10 +120,11 @@ Control {
             spacing: 1
             interactive: true
             clip: true
-            delegate: FlightPlansPlateItemDelegate {
+            boundsBehavior: Flickable.StopAtBounds
+            delegate: FlightPlansStrip {
                 id: _delegate
                 pinned: root.pinned
-                x: parent.x
+
             }
 
             displaced: Transition {
@@ -135,7 +137,8 @@ Control {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            color: "transparent"
+            color: StyleConstants.blackColor
+            opacity: 0.75
         }
     }
 
@@ -166,6 +169,7 @@ Control {
             PropertyChanges {
                 target: _downGround
                 color: StyleConstants.darkBaseColor
+                opacity: 1
             }
             PropertyChanges {
                 target: _addIndicator

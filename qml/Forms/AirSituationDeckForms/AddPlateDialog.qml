@@ -8,9 +8,12 @@ AbstractDialog {
 
     id: root
 
+    property bool rightPinArea: true
+
     title: "Open new window"
     width: 322
     height: _listView.contentHeight + header.height
+
 
     contentItem: ListView {
 
@@ -68,10 +71,13 @@ AbstractDialog {
 
             onHoveredChanged: highlighted = hovered
             onClicked: function addPlate() {
+                if(root.rightPinArea)
+                    _rightPinArea.pinToArea(plate)
+                else
+                    _leftPinArea.pinToArea(plate)
                 plate.visible = true
                 root.close()
             }
-
         }
 
         MouseArea {
